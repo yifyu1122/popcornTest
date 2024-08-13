@@ -21,7 +21,10 @@
                     <label><input type="radio" name="question1" value="cat"> 只是為了打發時間，所以才去看看</label>
                     <label><input type="radio" name="question1" value="salamander"> 我不想去……我想睡覺（但被拖去）</label>
                 </div>
-                <button type="button" onclick="nextPage()">下一頁</button>
+                <div class="navigation-buttons">
+                    <input id="next-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一頁</label>
+                </div>
                 <p class="page-indicator"><small>第 1 頁 ，  共 5 頁</small></p> 
             </div>
             <div id="page-2" class="quiz-page" style="display: none;">
@@ -32,8 +35,13 @@
                     <label><input type="radio" name="question2" value="cat"> 安靜陪伴不出聲</label>
                     <label><input type="radio" name="question2" value="salamander"> 聽其他室友討論</label>
                 </div>
-                <button type="button" onclick="prevPage()">上一頁</button>
-                <button type="button" onclick="nextPage()">下一頁</button>
+                <div class="navigation-buttons">
+                    <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一頁</label>
+            
+                    <input id="next-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一頁</label>
+                </div>
                 <p class="page-indicator"><small>第 2 頁 ，  共 5 頁</small></p> 
             </div>
             <div id="page-3" class="quiz-page" style="display: none;">
@@ -44,8 +52,13 @@
                     <label><input type="radio" name="question3" value="rabbit"> 充當和氣佬，降低雙方怒氣</label>
                     <label><input type="radio" name="question3" value="salamander"> 神色如常，繼續做自己的事</label>
                 </div>
-                <button type="button" onclick="prevPage()">上一頁</button>
-                <button type="button" onclick="nextPage()">下一頁</button>
+                <div class="navigation-buttons">
+                    <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一頁</label>
+            
+                    <input id="next-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一頁</label>
+                </div>
                 <p class="page-indicator"><small>第 3 頁 ，  共 5 頁</small></p> 
             </div>
             <div id="page-4" class="quiz-page" style="display: none;">
@@ -56,8 +69,13 @@
                     <label><input type="radio" name="question4" value="cat"> 堅信「生命自己會找到出路」，直接跨過</label>
                     <label><input type="radio" name="question4" value="salamander"> 根本沒發現那個是貼身衣物，還拿起來觀察</label>
                 </div>
-                <button type="button" onclick="prevPage()">上一頁</button>
-                <button type="button" onclick="nextPage()">下一頁</button>
+                <div class="navigation-buttons">
+                    <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一頁</label>
+            
+                    <input id="next-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一頁</label>
+                </div>
                 <p class="page-indicator"><small>第 4 頁 ，  共 5 頁</small></p> 
             </div>
             <div id="page-5" class="quiz-page" style="display: none;">
@@ -68,8 +86,13 @@
                     <label><input type="radio" name="question5" value="cat"> 山羊如果真的受不了應該會自己說的</label>
                     <label><input type="radio" name="question5" value="salamander"> 山羊好像是草食性動物，老虎吃肉羹這樣真的好嗎？還是觀察一下好了。</label>
                 </div>
-                <button type="button" onclick="prevPage()">上一頁</button>
-                <button type="button" onclick="submitQuiz()">提交答案</button>
+                <div class="navigation-buttons">
+                    <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一頁</label>
+            
+                    <input id="next-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="next-page" class="navigation-label" onclick="submitQuiz()">提交答案</label>
+                </div>
                 <p class="page-indicator"><small>第 5 頁 ，  共 5 頁</small></p> 
             </div>
         </form>

@@ -97,10 +97,10 @@ function submitQuiz(event) {
         resultText += '<br><small>長按上方結果圖就能儲存囉！</small>';
 
         // 添加“再測一次”按鈕
-        resultText += '<br><button onclick="restartQuiz()">再測一次</button>';
+        resultText += '<br><label class="result-button" onclick="restartQuiz()">再測一次</label>';
 
         // 添加“分享結果”按鈕
-        resultText += `<br><button onclick="shareResult('${imageUrl}', '${result}')">分享結果</button>`;
+        resultText += `<br><label class="result-button" onclick="shareResult('${imageUrl}', '${result}')">分享結果</label>`;
 
         // 隱藏所有頁面，顯示結果
         document.querySelectorAll('.quiz-page').forEach(page => page.style.display = 'none');

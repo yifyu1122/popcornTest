@@ -27,6 +27,83 @@ body {
     font-weight: bold;
 }
 
+.hidden-radio {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+}
+
+.navigation-label {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    margin: 5px;
+    text-align: center;
+}
+
+.navigation-label:hover {
+    background-color: #e0e0e0;
+}
+
+.navigation-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation-label:active {
+    background-color: #d0f0c0;
+    border-color: #a0d0a0;
+}
+
+.page-indicator {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+}
+
+
+.save-instruction {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.result-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.result-button:hover {
+    background-color: #e0e0e0;
+}
+
+.result-button:active {
+    background-color: #d0f0c0;
+    border-color: #a0d0a0;
+}
+
 label {
     display: block;
     margin-bottom: 10px;
@@ -51,18 +128,3 @@ button:hover {
     font-weight: bold;
 }
 
-
-.page-indicator {
-    text-align: center;
-    font-size: 0.8em;
-    color: #666;
-    margin-top: 10px;
-}
-
-
-.save-instruction {
-    text-align: center;
-    font-size: 0.8em;
-    color: #666;
-    margin-top: 10px;
-}
