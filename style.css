@@ -50,3 +50,19 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
 }
+
+
+.page-indicator {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+}
+
+
+.save-instruction {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+}

@@ -93,8 +93,14 @@ function submitQuiz(event) {
             resultText = `<img src="${imageUrl}" alt="${result}" style="max-width: 100%;"><br>` + resultText;
         }
 
+        // 添加提示文字
+        resultText += '<br><small>長按上方結果圖就能儲存囉！</small>';
+
         // 添加“再測一次”按鈕
         resultText += '<br><button onclick="restartQuiz()">再測一次</button>';
+
+        // 添加“分享結果”按鈕
+        resultText += `<br><button onclick="shareResult('${imageUrl}', '${result}')">分享結果</button>`;
 
         // 隱藏所有頁面，顯示結果
         document.querySelectorAll('.quiz-page').forEach(page => page.style.display = 'none');
@@ -116,6 +122,22 @@ function restartQuiz() {
 
     // 重新顯示第一頁
     document.getElementById(`page-${currentPage}`).style.display = 'block';
+}
+
+function shareResult(imageUrl, result) {
+    if (navigator.share) {
+        navigator.share({
+            title: '測驗結果',
+            text: `我的結果是：${result}`,
+            url: imageUrl
+        }).then(() => {
+            console.log('分享成功');
+        }).catch(err => {
+            console.error('分享失敗', err);
+        });
+    } else {
+        alert('分享功能不被支持');
+    }
 }
 
 // 初始顯示第 1 頁
