@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -15,14 +15,43 @@ body {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(66, 80, 134);
+    color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
- /* 音樂播放器樣式 */
- #audio-player {
+#quiz-container label,
+#quiz-container p {
+    color: white;
+}
+
+/* 音樂播放器樣式 */
+#audio-player {
     display: none;
+}
+
+/* 設置背景圖像的容器 */
+.background-image {
+    position: fixed; /* 固定背景 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('blueink.png'); /* 更換為你的背景圖像 */
+    background-size: cover; /* 使背景圖像覆蓋整個容器 */
+    background-position: center; /* 背景圖像居中 */
+    background-repeat: no-repeat; /* 防止背景圖像重複 */
+    filter: blur(8px); /* 設置模糊效果，根據需要調整數值 */
+    z-index: -1; /* 確保背景圖像位於內容後面 */
+}
+
+/* 內容樣式 */
+.content {
+    position: relative;
+    z-index: 1; /* 確保內容在背景之上 */
+    padding: 20px;
+    color: #fff; /* 設置文字顏色 */
 }
 
 /* 靜音按鈕樣式 */
@@ -49,7 +78,7 @@ body {
 
 /* 開始測驗按鈕樣式 */
 .start-button {
-    background-color: #f0f0f0; /* 按鈕背景顏色 */
+    background-color: rgb(255, 160, 90); /* 按鈕背景顏色 */
     border: 2px solid #ccc; /* 按鈕邊框顏色 */
     border-radius: 50px; /* 圓形按鈕 */
     padding: 15px 30px;
@@ -59,16 +88,15 @@ body {
     cursor: pointer;
     width: 80%;
     /* max-width: 300px; 限制按鈕寬度 */
-    color: #333; /* 按鈕文字顏色 */
+    color: #fff; /* 按鈕文字顏色 */
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease; /* 平滑過渡效果 */
 }
 
-
 .start-button:hover {
-    background-color: #e0e0e0; /* 懸停背景顏色 */
-    color: #000; /* 懸停文字顏色 */
+    background-color: rgb(255, 140, 0); /* 懸停背景顏色 */
+    color: #fff; /* 懸停文字顏色 */
 }
 
 .white-icon {
@@ -102,17 +130,18 @@ body {
 .navigation-label {
     display: inline-block;
     padding: 10px 20px;
-    border: 2px solid #ccc;
+    border: 2px solid rgb(255, 255, 255); /* 按鈕邊框顏色 */
     border-radius: 5px;
     cursor: pointer;
-    background-color: #f9f9f9;
+    background-color: rgb(255, 160, 90); /* 按鈕背景顏色 */
+    color: #fff; /* 按鈕文字顏色 */
     font-size: 16px;
     margin: 5px;
     text-align: center;
 }
 
 .navigation-label:hover {
-    background-color: #e0e0e0;
+    background-color: rgb(255, 140, 0); /* 懸停背景顏色 */
 }
 
 .navigation-buttons {
@@ -132,13 +161,13 @@ body {
     margin-top: 10px;
 }
 
-
 .save-instruction {
     text-align: center;
     font-size: 0.8em;
     color: #666;
     margin-top: 10px;
 }
+
 .button-container {
     text-align: center; /* 將內部內容置中 */
     margin-top: 20px; /* 顯示容器與上方內容的間距 */
@@ -148,7 +177,7 @@ body {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 50px;
-    background-color: #f0f0f0;
+    background-color: rgb(255, 160, 90); /* 按鈕背景顏色 */
     border: 2px solid #ccc;
     text-align: center;
     cursor: pointer;
@@ -156,7 +185,7 @@ body {
 }
 
 .result-button:hover {
-    background-color: #e0e0e0;
+    background-color: rgb(255, 140, 0); /* 懸停背景顏色 */
 }
 
 .result-button:active {
@@ -174,11 +203,12 @@ body {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 50px;
-    background-color: #f0f0f0;
+    background-color: rgb(255, 160, 90); /* 按鈕背景顏色 */
     border: 2px solid #ccc;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
+    font-family: 'Source Han Sans', sans-serif; /* 設置字體 */
 }
 
 .option-input {
@@ -191,28 +221,13 @@ body {
     cursor: not-allowed;
 }
 
-
 label {
     display: block;
     margin-bottom: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-button:hover {
-    background-color: #45a049;
+    font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Arial', sans-serif;
 }
 
 #result {
     margin-top: 20px;
     font-weight: bold;
 }
-
