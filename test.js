@@ -1,11 +1,55 @@
 let currentPage = 1;
 const totalPages = 5;
+document.addEventListener('DOMContentLoaded', () => {
+    const muteButton = document.querySelector('.mute-button');
+    const audioPlayer = document.getElementById('audio-player');
+
+    // 設定音量為30%
+    audioPlayer.volume = 0.3;
+
+    // 音樂自動播放設置
+    window.addEventListener('click', () => {
+        audioPlayer.play().catch(error => {
+            console.error('播放失敗:', error);
+        });
+    });
+
+    // 靜音按鈕功能
+    muteButton.addEventListener('click', () => {
+        if (audioPlayer.muted) {
+            audioPlayer.muted = false;
+            muteButton.querySelector('.white-icon').textContent = '🔊'; // 顯示音量圖標
+            muteButton.classList.remove('white-icon');
+        } else {
+            audioPlayer.muted = true;
+            muteButton.querySelector('.white-icon').textContent = '🔇'; // 顯示靜音圖標
+            muteButton.classList.add('white-icon');
+        }
+    });
+
+    // 初始顯示第 1 頁
+    showPage(currentPage);
+
+    document.getElementById('start-quiz').addEventListener('click', () => {
+        document.getElementById('start-page').style.display = 'none';
+        document.getElementById('quiz-form').style.display = 'block';
+        showPage(currentPage);  // 顯示測驗的第一頁
+    });
+
+    document.getElementById('submit-button').addEventListener('click', submitQuiz);
+});
 
 function showPage(pageNumber) {
     for (let i = 1; i <= totalPages; i++) {
         document.getElementById(`page-${i}`).style.display = i === pageNumber ? 'block' : 'none';
     }
 }
+
+document.getElementById('start-quiz').addEventListener('click', () => {
+    document.getElementById('start-page').style.display = 'none';
+    document.getElementById('quiz-form').style.display = 'block';
+    showPage(currentPage);  // 顯示測驗的第一頁
+});
 
 function nextPage() {
     if (isPageValid(currentPage)) {
@@ -33,35 +77,41 @@ function isPageValid(pageNumber) {
 
 function submitQuiz(event) {
     if (isPageValid(currentPage)) {
-        if (event) event.preventDefault(); // 阻止表單默認提交行為
-        const form = document.getElementById('quiz-form');
         const resultDiv = document.getElementById('result');
 
         // 簡單的結果判斷
         const answers = document.querySelectorAll('input[type="radio"]:checked');
         let score = {dog: 0, rabbit: 0, cat: 0, salamander: 0};
         
+        // 調試輸出選擇的答案
+        console.log('選擇的答案:', Array.from(answers).map(a => a.value));
+
         answers.forEach(answer => {
-            score[answer.value]++;
+            if (score.hasOwnProperty(answer.value)) {
+                score[answer.value]++;
+            } else {
+                console.warn('未知的選項值:', answer.value);
+            }
         });
 
         let maxScore = Math.max(...Object.values(score));
         let result = Object.keys(score).filter(animal => score[animal] === maxScore);
 
+        // 處理同分情況
         if (result.length > 1) {
-            // 處理同分情況
+            // 修改此處邏輯以匹配新的標籤結構
             if (result.includes('dog') && result.includes('rabbit')) {
-                result = answers[2].value === 'rabbit' ? '兔兔' : '狗狗';
+                result = answers[2]?.value === 'rabbit' ? '兔兔' : '狗狗';
             } else if (result.includes('dog') && result.includes('cat')) {
-                result = answers[0].value === 'dog' ? '狗狗' : '貓貓';
+                result = answers[0]?.value === 'dog' ? '狗狗' : '貓貓';
             } else if (result.includes('dog') && result.includes('salamander')) {
-                result = answers[0].value === 'dog' ? '狗狗' : '蠑螈';
+                result = answers[0]?.value === 'dog' ? '狗狗' : '蠑螈';
             } else if (result.includes('cat') && result.includes('rabbit')) {
-                result = answers[4].value === 'cat' ? '貓貓' : '兔兔';
+                result = answers[4]?.value === 'cat' ? '貓貓' : '兔兔';
             } else if (result.includes('cat') && result.includes('salamander')) {
-                result = answers[3].value === 'cat' ? '貓貓' : '蠑螈';
+                result = answers[3]?.value === 'cat' ? '貓貓' : '蠑螈';
             } else if (result.includes('rabbit') && result.includes('salamander')) {
-                result = answers[1].value === 'rabbit' ? '兔兔' : '蠑螈';
+                result = answers[1]?.value === 'rabbit' ? '兔兔' : '蠑螈';
             }
         } else {
             result = result[0] === 'dog' ? '狗狗' :
@@ -72,7 +122,6 @@ function submitQuiz(event) {
         // 定義結果文字
         let resultText = "你的結果是：" + result;
         let imageUrl = '';
-
 
         // 添加額外描述
         if (result === '兔兔') {
@@ -93,19 +142,16 @@ function submitQuiz(event) {
             resultText = `<img src="${imageUrl}" alt="${result}" style="max-width: 100%;"><br>` + resultText;
         }
 
-        // 添加提示文字
-        resultText += '<br><small>長按上方結果圖就能儲存囉！</small>';
-
-        // 添加“再測一次”按鈕
-        resultText += '<br><label class="result-button" onclick="restartQuiz()">再測一次</label>';
-
-        // 添加“分享結果”按鈕
-        resultText += `<br><label class="result-button" onclick="shareResult('${imageUrl}', '${result}')">分享結果</label>`;
+        resultText += `
+            <div class="button-container">
+                <label class="result-button" onclick="restartQuiz()">再測一次</label>
+                <label class="result-button" onclick="shareResult('${imageUrl}', '${result}')">分享結果</label>
+            </div>`;
 
         // 隱藏所有頁面，顯示結果
         document.querySelectorAll('.quiz-page').forEach(page => page.style.display = 'none');
-        resultDiv.innerHTML = resultText; // 使用 innerHTML 來顯示包含 HTML 的內容
         resultDiv.style.display = 'block';
+        resultDiv.innerHTML = resultText;
     } else {
         alert("你沒有選到選項哦");
     }
@@ -113,15 +159,11 @@ function submitQuiz(event) {
 
 function restartQuiz() {
     currentPage = 1;
-    showPage(currentPage);
     document.getElementById('result').style.display = 'none';
+    document.getElementById('quiz-form').style.display = 'block';
 
-    // 清除之前的選擇
-    const answers = document.querySelectorAll('input[type="radio"]:checked');
-    answers.forEach(answer => answer.checked = false);
-
-    // 重新顯示第一頁
-    document.getElementById(`page-${currentPage}`).style.display = 'block';
+    document.querySelectorAll('input[type="radio"]:checked').forEach(answer => answer.checked = false);
+    showPage(currentPage);
 }
 
 function shareResult(imageUrl, result) {
@@ -143,5 +185,6 @@ function shareResult(imageUrl, result) {
 // 初始顯示第 1 頁
 document.addEventListener('DOMContentLoaded', () => {
     showPage(currentPage);
+    document.getElementById('submit-button').addEventListener('click', submitQuiz);
 });
 

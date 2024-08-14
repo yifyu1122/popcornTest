@@ -5,6 +5,11 @@ body {
     background-color: #f4f4f4;
 }
 
+#start-page {
+    text-align: center;
+    margin-top: 20px;
+}
+
 #quiz-container {
     width: 80%;
     max-width: 600px;
@@ -13,6 +18,61 @@ body {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ /* 音樂播放器樣式 */
+ #audio-player {
+    display: none;
+}
+
+/* 靜音按鈕樣式 */
+.mute-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(81, 97, 158, 0.8);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* 確保圖標在最上層 */
+}
+
+.mute-button:hover {
+    background-color: rgb(66, 80, 134, 0.8); /* 懸停時按鈕的背景顏色 */
+}
+
+/* 開始測驗按鈕樣式 */
+.start-button {
+    background-color: #f0f0f0; /* 按鈕背景顏色 */
+    border: 2px solid #ccc; /* 按鈕邊框顏色 */
+    border-radius: 50px; /* 圓形按鈕 */
+    padding: 15px 30px;
+    margin: 10px auto; /* 自動邊距以實現水平置中 */
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    width: 80%;
+    /* max-width: 300px; 限制按鈕寬度 */
+    color: #333; /* 按鈕文字顏色 */
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 平滑過渡效果 */
+}
+
+
+.start-button:hover {
+    background-color: #e0e0e0; /* 懸停背景顏色 */
+    color: #000; /* 懸停文字顏色 */
+}
+
+.white-icon {
+    font-size: 24px;
 }
 
 .quiz-page {
@@ -79,19 +139,19 @@ body {
     color: #666;
     margin-top: 10px;
 }
+.button-container {
+    text-align: center; /* 將內部內容置中 */
+    margin-top: 20px; /* 顯示容器與上方內容的間距 */
+}
 
 .result-button {
     display: inline-block;
     padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #f0f0f0;
     border: 2px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #f9f9f9;
-    font-size: 16px;
-    margin: 5px;
     text-align: center;
-    text-decoration: none;
-    color: #333;
+    cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -103,6 +163,34 @@ body {
     background-color: #d0f0c0;
     border-color: #a0d0a0;
 }
+
+.option-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option-input {
+    display: none;
+}
+
+.option-input:checked + .option-button {
+    background-color: #ccc;
+    border-color: #aaa;
+    cursor: not-allowed;
+}
+
 
 label {
     display: block;

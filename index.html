@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
@@ -9,17 +9,42 @@
 </head>
 
 <body>
+    <!-- 音樂播放器 -->
+    <audio id="audio-player" loop>
+        <source src="What Kind of Dormmate Are You.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音樂哦
+    </audio>
+
+    <!-- 靜音按鈕 -->
+    <button class="mute-button">
+        <span class="white-icon">🔊</span>
+      </button>
+      
     <div id="quiz-container">
         <h1>爆米花心理小測驗 - 你是什麼樣的室友?</h1>
-        <form id="quiz-form">
-            <div id="page-1" class="quiz-page">
+        <div id="start-page">
+            <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
+            <button id="start-quiz" class="start-button">開始測驗</button>
+        </div>
+        <form id="quiz-form" style="display: none;">
+            <div id="page-1" class="quiz-page" style="display: none;">
                 <div class="question">
+                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
                     <p>你考上了爆米花動物學院，身為大一新生的你，在剛來到宿舍的第一天就被同寢室的朋友邀請去參加____活動，那請問此刻的你想法會是如何呢？
                     </p>
-                    <label><input type="radio" name="question1" value="dog" required> 超樂意去的啦！希望可以玩得盡興</label>
-                    <label><input type="radio" name="question1" value="rabbit"> 為了跟室友有話題還是去一下好了</label>
-                    <label><input type="radio" name="question1" value="cat"> 只是為了打發時間，所以才去看看</label>
-                    <label><input type="radio" name="question1" value="salamander"> 我不想去……我想睡覺（但被拖去）</label>
+                    <div class="option-container">
+                        <input type="radio" name="question1" id="option1-1" value="dog" class="option-input" required>
+                        <label for="option1-1" class="option-button">超樂意去的啦！希望可以玩得盡興</label>
+
+                        <input type="radio" name="question1" id="option1-2" value="rabbit" class="option-input">
+                        <label for="option1-2" class="option-button">為了跟室友有話題還是去一下好了</label>
+
+                        <input type="radio" name="question1" id="option1-3" value="cat" class="option-input">
+                        <label for="option1-3" class="option-button">只是為了打發時間，所以才去看看</label>
+
+                        <input type="radio" name="question1" id="option1-4" value="salamander" class="option-input">
+                        <label for="option1-4" class="option-button">我不想去……我想睡覺（但被拖去）</label>
+                    </div>
                 </div>
                 <div class="navigation-buttons">
                     <input id="next-page" type="radio" name="navigation" class="hidden-radio">
@@ -29,11 +54,21 @@
             </div>
             <div id="page-2" class="quiz-page" style="display: none;">
                 <div class="question">
+                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
                     <p>你的室友看起來似乎很低落，耳朵都垂到地上了，整個宿舍的氣氛都因為他而變得沉悶了起來，那請問你會採取什麼樣的行動呢？</p>
-                    <label><input type="radio" name="question2" value="dog" required> 用抱抱來溫暖他</label>
-                    <label><input type="radio" name="question2" value="rabbit"> 用食物來投餵他</label>
-                    <label><input type="radio" name="question2" value="cat"> 安靜陪伴不出聲</label>
-                    <label><input type="radio" name="question2" value="salamander"> 聽其他室友討論</label>
+                    <div class="option-container">
+                        <input type="radio" name="question2" id="option2-1" value="dog" class="option-input" required>
+                        <label for="option2-1" class="option-button">用抱抱來溫暖他</label>
+
+                        <input type="radio" name="question2" id="option2-2" value="rabbit" class="option-input">
+                        <label for="option2-2" class="option-button">用食物來投餵他</label>
+
+                        <input type="radio" name="question2" id="option2-3" value="cat" class="option-input">
+                        <label for="option2-3" class="option-button">安靜陪伴不出聲</label>
+
+                        <input type="radio" name="question2" id="option2-4" value="salamander" class="option-input">
+                        <label for="option2-4" class="option-button">聽其他室友討論</label>
+                    </div>
                 </div>
                 <div class="navigation-buttons">
                     <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
@@ -46,11 +81,21 @@
             </div>
             <div id="page-3" class="quiz-page" style="display: none;">
                 <div class="question">
+                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
                     <p>鱷魚指責山椒魚把冷氣開太冷，於是兩位發生了爭執，於是你決定……</p>
-                    <label><input type="radio" name="question3" value="dog" required> 幫你覺得有理的那一方說話</label>
-                    <label><input type="radio" name="question3" value="cat"> 什麼都不做，靜靜看他們吵</label>
-                    <label><input type="radio" name="question3" value="rabbit"> 充當和氣佬，降低雙方怒氣</label>
-                    <label><input type="radio" name="question3" value="salamander"> 神色如常，繼續做自己的事</label>
+                    <div class="option-container">
+                        <input type="radio" name="question3" id="option3-1" value="dog" class="option-input" required>
+                        <label for="option3-1" class="option-button">幫你覺得有理的那一方說話</label>
+
+                        <input type="radio" name="question3" id="option3-2" value="cat" class="option-input">
+                        <label for="option3-2" class="option-button">什麼都不做，靜靜看他們吵</label>
+
+                        <input type="radio" name="question3" id="option3-3" value="rabbit" class="option-input">
+                        <label for="option3-3" class="option-button">充當和氣佬，降低雙方怒氣</label>
+
+                        <input type="radio" name="question3" id="option3-4" value="salamander" class="option-input">
+                        <label for="option3-4" class="option-button">神色如常，繼續做自己的事</label>
+                    </div>
                 </div>
                 <div class="navigation-buttons">
                     <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
@@ -63,11 +108,21 @@
             </div>
             <div id="page-4" class="quiz-page" style="display: none;">
                 <div class="question">
+                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
                     <p>準備去洗澡時打開房門卻看到一件貼身衣物橫躺在門口，此時你的反應是……</p>
-                    <label><input type="radio" name="question4" value="dog" required> 覺得超級好笑，叫舍友出來看</label>
-                    <label><input type="radio" name="question4" value="rabbit"> 在宿舍群組中以文字敘述協尋</label>
-                    <label><input type="radio" name="question4" value="cat"> 堅信「生命自己會找到出路」，直接跨過</label>
-                    <label><input type="radio" name="question4" value="salamander"> 根本沒發現那個是貼身衣物，還拿起來觀察</label>
+                    <div class="option-container">
+                        <input type="radio" name="question4" id="option4-1" value="dog" class="option-input" required>
+                        <label for="option4-1" class="option-button">覺得超級好笑，叫舍友出來看</label>
+
+                        <input type="radio" name="question4" id="option4-2" value="rabbit" class="option-input">
+                        <label for="option4-2" class="option-button">在宿舍群組中以文字敘述協尋</label>
+
+                        <input type="radio" name="question4" id="option4-3" value="cat" class="option-input">
+                        <label for="option4-3" class="option-button">堅信「生命自己會找到出路」，直接跨過</label>
+
+                        <input type="radio" name="question4" id="option4-4" value="salamander" class="option-input">
+                        <label for="option4-4" class="option-button">根本沒發現那個是貼身衣物，還拿起來觀察</label>
+                    </div>
                 </div>
                 <div class="navigation-buttons">
                     <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
@@ -80,11 +135,21 @@
             </div>
             <div id="page-5" class="quiz-page" style="display: none;">
                 <div class="question">
+                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
                     <p>一天回到宿舍，你發現宿舍充滿濃郁的香氣，定睛一看原來是老虎室友在吃肉羹。旁邊的山羊室友看起來似乎有點難受的樣子，此時你決定？</p>
-                    <label><input type="radio" name="question5" value="dog" require> 老虎怎麼吃美食沒分給山羊，訂披薩讓大家一起吃</label>
-                    <label><input type="radio" name="question5" value="rabbit"> 詢問山羊問他還好嗎，要不要和他一起出去</label>
-                    <label><input type="radio" name="question5" value="cat"> 山羊如果真的受不了應該會自己說的</label>
-                    <label><input type="radio" name="question5" value="salamander"> 山羊好像是草食性動物，老虎吃肉羹這樣真的好嗎？還是觀察一下好了。</label>
+                    <div class="option-container">
+                        <input type="radio" name="question5" id="option5-1" value="dog" class="option-input" required>
+                        <label for="option5-1" class="option-button">老虎怎麼吃美食沒分給山羊，訂披薩讓大家一起吃</label>
+
+                        <input type="radio" name="question5" id="option5-2" value="rabbit" class="option-input">
+                        <label for="option5-2" class="option-button">詢問山羊問他還好嗎，要不要和他一起出去</label>
+
+                        <input type="radio" name="question5" id="option5-3" value="cat" class="option-input">
+                        <label for="option5-3" class="option-button">山羊如果真的受不了應該會自己說的</label>
+
+                        <input type="radio" name="question5" id="option5-4" value="salamander" class="option-input">
+                        <label for="option5-4" class="option-button">山羊好像是草食性動物，老虎吃肉羹這樣真的好嗎？還是觀察一下好了。</label>
+                    </div>
                 </div>
                 <div class="navigation-buttons">
                     <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
