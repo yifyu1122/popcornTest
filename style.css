@@ -49,10 +49,16 @@ header a:hover {
 
 body {
     font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+main {
+    flex: 1;
+}
+
 /* 設置背景圖像的容器 */
 .background-image {
     position: fixed; /* 固定背景 */
@@ -75,7 +81,8 @@ body {
 
 #quiz-container {
     width: 80%;
-    top: 500px;;
+    top: 500px;
+    bottom: 300px;
     max-width: 600px;
     margin: 100px auto 20px auto;
     padding: 20px;
@@ -180,7 +187,7 @@ body {
 
 .navigation-label {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px;
     border: 2px solid rgb(255, 255, 255); /* 按鈕邊框顏色 */
     border-radius: 5px;
     cursor: pointer;
@@ -288,6 +295,10 @@ label {
 }
 
 footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color:#000000;
     color:#B7B7B7;
     height:60px;
