@@ -15,7 +15,8 @@ h1 {
 h2 {
     color:white;
     position:relative;
-    padding: 5px;
+    padding: 3px;
+    text-align: center;
 }
 header {
     background-color:rgba(35,28,26,0.8);
@@ -131,23 +132,23 @@ main {
     max-width: 300px;
     display: block; 
     margin: 0 auto; 
-    padding: 30px
+    padding: 20px
 }
 
 /* 開始測驗按鈕樣式 */
 .start-button {
     background-color: rgb(255, 160, 90); /* 按鈕背景顏色 */
-    border: 2px solid #ccc; /* 按鈕邊框顏色 */
+    border: 2px solid #cccccca1; /* 按鈕邊框顏色 */
     border-radius: 50px; /* 圓形按鈕 */
     padding: 15px 30px;
     margin: 10px auto; /* 自動邊距以實現水平置中 */
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    width: 80%;
+    width: 60%;
     /* max-width: 300px; 限制按鈕寬度 */
-    color: #fff; /* 按鈕文字顏色 */
-    font-size: 16px;
+    color: #ffffff; /* 按鈕文字顏色 */
+    font-size: 20px;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease; /* 平滑過渡效果 */
 }
@@ -187,19 +188,22 @@ main {
 
 .navigation-label {
     display: inline-block;
-    padding: 10px;
-    border: 2px solid rgb(255, 255, 255); /* 按鈕邊框顏色 */
+    padding: 5px 10px;
+    border: 2px solid #5A0A96; /* 按鈕邊框顏色 */
     border-radius: 5px;
     cursor: pointer;
-    background-color: rgb(255, 160, 90); /* 按鈕背景顏色 */
+    background-color: #6A0DAD; /* 按鈕背景顏色 */
     color: #fff; /* 按鈕文字顏色 */
     font-size: 16px;
+    line-height: 1;
     margin: 5px;
     text-align: center;
+    font-weight: bold;
 }
 
 .navigation-label:hover {
-    background-color: rgb(255, 140, 0); /* 懸停背景顏色 */
+    background-color: #7D3FD5; /* 懸停背景顏色 */
+    border-color: #9D4EDD;
 }
 
 .navigation-buttons {
@@ -254,12 +258,15 @@ main {
 .option-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    /* padding: 0 20px; */
 }
 
 .option-button {
     display: inline-block;
-    padding: 10px 20px;
+    width: 80%; /* 按钮宽度为容器宽度减去左右边距 */
+    padding: 5px 10px;
+    margin: 0 auto;
     border-radius: 50px;
     background-color: rgb(255, 160, 90); /* 按鈕背景顏色 */
     border: 2px solid #ccc;
@@ -267,6 +274,8 @@ main {
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
     font-family: 'Source Han Sans', sans-serif; /* 設置字體 */
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .option-input {
@@ -279,6 +288,7 @@ main {
     cursor: not-allowed;
 }
 
+/*如果使用者的裝置沒有安裝某個特定字體，瀏覽器會依序嘗試使用其他字體，直到找到可用的字體*/
 label {
     display: block;
     margin-bottom: 10px;
