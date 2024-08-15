@@ -10,9 +10,19 @@
 </head>
 
 <body>
-
+    <header>
+    <button class="menu">&#9776;</button>
+    <h1>爆米花心理小測驗</h1>
+    <nav>
+    <ul>         
+        <li><a href="https://www.facebook.com/profile.php?id=100064343486453&mibextid=ZbWKwL">關於我們</a></li>             
+    </ul>
+    </nav>  
+    </header>   
+    <main>
+    
     <div class="background-image"></div>
-
+    <section>
     <!-- 音樂播放器 -->
     <audio id="audio-player" loop>
         <source src="What Kind of Dormmate Are You.mp3" type="audio/mpeg">
@@ -25,15 +35,15 @@
       </button>
       
     <div id="quiz-container">
-        <h1>爆米花心理小測驗 - 你是什麼樣的室友?</h1>
+        <h2>你是什麼樣的室友?</h2>
         <div id="start-page">
-            <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
+            <img class="pic" src="popcorn.jpg" alt="測驗圖片">
             <button id="start-quiz" class="start-button">開始測驗</button>
         </div>
         <form id="quiz-form" style="display: none;">
             <div id="page-1" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
+                    <img class = "pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>你考上了爆米花動物學院，身為大一新生的你，在剛來到宿舍的第一天就被同寢室的朋友邀請去參加____活動，那請問此刻的你想法會是如何呢？
                     </p>
                     <div class="option-container">
@@ -58,7 +68,7 @@
             </div>
             <div id="page-2" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
+                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>你的室友看起來似乎很低落，耳朵都垂到地上了，整個宿舍的氣氛都因為他而變得沉悶了起來，那請問你會採取什麼樣的行動呢？</p>
                     <div class="option-container">
                         <input type="radio" name="question2" id="option2-1" value="dog" class="option-input" required>
@@ -85,7 +95,7 @@
             </div>
             <div id="page-3" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
+                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>鱷魚指責山椒魚把冷氣開太冷，於是兩位發生了爭執，於是你決定……</p>
                     <div class="option-container">
                         <input type="radio" name="question3" id="option3-1" value="dog" class="option-input" required>
@@ -112,7 +122,7 @@
             </div>
             <div id="page-4" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
+                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>準備去洗澡時打開房門卻看到一件貼身衣物橫躺在門口，此時你的反應是……</p>
                     <div class="option-container">
                         <input type="radio" name="question4" id="option4-1" value="dog" class="option-input" required>
@@ -139,7 +149,7 @@
             </div>
             <div id="page-5" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img src="popcorn.jpg" alt="測驗圖片" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;">
+                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>一天回到宿舍，你發現宿舍充滿濃郁的香氣，定睛一看原來是老虎室友在吃肉羹。旁邊的山羊室友看起來似乎有點難受的樣子，此時你決定？</p>
                     <div class="option-container">
                         <input type="radio" name="question5" id="option5-1" value="dog" class="option-input" required>
@@ -167,6 +177,11 @@
         </form>
         <div id="result" class="quiz-form" style="display: none;"></div>
     </div>
+    </section>
+    </main>
+    <footer>
+        <p>Copyright © 2024 爆米花志工團 All Rights Reserved.</p>
+    </footer>
     <script src="test.js"></script>
 </body>
 

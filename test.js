@@ -141,7 +141,8 @@ function submitQuiz(event) {
         if (imageUrl) {
             resultText = `<img src="${imageUrl}" alt="${result}" style="max-width: 100%;"><br>` + resultText;
         }
-
+        resultText += '<br><small style="color: white; display: block; text-align: center; padding: 5px">長按上方結果圖就能儲存囉！</small>';
+        
         resultText += `
             <div class="button-container">
                 <label class="result-button" onclick="restartQuiz()">再測一次</label>
