@@ -2,10 +2,15 @@
     padding:0;
     margin:0;
 }
+
+main {
+    flex: 1;
+}
+
 h1 {
     color:white;
     position:absolute;
-    left:80px;
+    left:100px;
     top:0;
     line-height: 80px;
     background-repeat: no-repeat;
@@ -15,7 +20,6 @@ h1 {
 h2 {
     color:white;
     position:relative;
-    padding: 3px;
     text-align: center;
 }
 header {
@@ -32,19 +36,17 @@ header {
 
 header ul {
     position:absolute;
-    right:5vw;
+    right: 80px;
     top:0;
     line-height:80px;
 }
 header li {
     display:inline;
     margin-right:4vw;    
-}
-header a {
     color:white;
     text-decoration: none;
 }
-header a:hover {
+header li:hover {
     text-decoration: underline;
 }
 
@@ -54,10 +56,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-main {
-    flex: 1;
 }
 
 /* 設置背景圖像的容器 */
@@ -71,13 +69,12 @@ main {
     background-size: cover; /* 使背景圖像覆蓋整個容器 */
     background-position: center; /* 背景圖像居中 */
     background-repeat: no-repeat; /* 防止背景圖像重複 */
-    filter: blur(8px); /* 設置模糊效果，根據需要調整數值 */
+    /* filter: blur(8px); 設置模糊效果，根據需要調整數值 */
     z-index: -1; /* 確保背景圖像位於內容後面 */
 }
 
 #start-page {
     text-align: center;
-    margin-top: 20px;
 }
 
 #quiz-container {
@@ -87,7 +84,7 @@ main {
     max-width: 600px;
     margin: 100px auto 20px auto;
     padding: 20px;
-    background-color: rgb(66, 80, 134);
+    background-color: rgb(66, 80, 134, 0.8);
     border: 5px white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -106,24 +103,26 @@ main {
 
 /* 靜音按鈕樣式 */
 .mute-button {
-    position: fixed;
-    top: 100px;
+    position: absolute;
+    top: 15px;
     right: 10px;
-    background-color: rgb(81, 97, 158, 0.8);
+    background-color: transparent;
     color: #fff;
     border: none;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+
     z-index: 1000; /* 確保圖標在最上層 */
 }
-
-.mute-button:hover {
-    background-color: rgb(66, 80, 134, 0.8); /* 懸停時按鈕的背景顏色 */
+.logo {
+    padding: 10px; 
+    width: 60px;
+    margin-left: 10px;
 }
 
 .pic {
@@ -132,7 +131,7 @@ main {
     max-width: 300px;
     display: block; 
     margin: 0 auto; 
-    padding: 20px
+    padding: 10px;
 }
 
 /* 開始測驗按鈕樣式 */
@@ -187,18 +186,16 @@ main {
 }
 
 .navigation-label {
-    display: inline-block;
-    padding: 5px 10px;
     border: 2px solid #5A0A96; /* 按鈕邊框顏色 */
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     background-color: #6A0DAD; /* 按鈕背景顏色 */
     color: #fff; /* 按鈕文字顏色 */
-    font-size: 16px;
-    line-height: 1;
-    margin: 5px;
+    font-size: 14px;
+    line-height: 0.8;
     text-align: center;
-    font-weight: bold;
+    padding: 0;
+    margin: 0 5px; 
 }
 
 .navigation-label:hover {
@@ -207,8 +204,11 @@ main {
 }
 
 .navigation-buttons {
+    display:  flex;
+    align-items: center; 
     text-align: center;
     margin-top: 20px;
+    justify-content: space-between; 
 }
 
 .navigation-label:active {
@@ -217,10 +217,10 @@ main {
 }
 
 .page-indicator {
+    margin: 0 auto;
     text-align: center;
     font-size: 0.8em;
     color: #666;
-    margin-top: 10px;
 }
 
 .save-instruction {
@@ -258,13 +258,13 @@ main {
 .option-container {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    /* padding: 0 20px; */
+    gap: 10px;
+    padding: 0 20px;
 }
 
 .option-button {
     display: inline-block;
-    width: 80%; /* 按钮宽度为容器宽度减去左右边距 */
+    width: 80%;
     padding: 5px 10px;
     margin: 0 auto;
     border-radius: 50px;
@@ -304,19 +304,77 @@ label {
     display: none;
 }
 
+
+
+
+
+
+
+.content {
+    display: none;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    margin-top: 120px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.about-us h2 {
+    font-size: 24px;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 10px;
+}
+
+.benefits h3 {
+    font-size: 20px;
+    border-bottom: 1px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+.flavors h3 {
+    font-size: 20px;
+    border-bottom: 1px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
 footer {
     position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color:#000000;
+    background-color:rgba(0, 0, 0);
     color:#B7B7B7;
-    height:60px;
+    height:100px;
     display:flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     font-size: 14px;
+    padding: 15px;
+    box-sizing: border-box;
 }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 30px;
+    margin: 0 10px; 
+}
+
+
+
 
 /* Phone */
 @media screen and (max-width: 768px) {
@@ -330,5 +388,42 @@ footer {
         left: 20px;
         border: none;
         cursor:pointer;
+    }
+
+    header ul {
+        position:absolute;
+        right: 70px;
+        top:0;
+        line-height:80px;
+    }
+
+    .logo {
+        padding: 10px; 
+        width: 60px;
+        margin-left: 0;
+    }
+
+    h1 {
+        color:white;
+        position:absolute;
+        left:80px;
+        top:0;
+        line-height: 80px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width:280px;
+    }
+
+    .pic {
+        position: relative;
+        width: 100%; 
+        max-width: 200px;
+        display: block; 
+        margin: 0 auto; 
+    }
+
+    #quiz-container p {
+        padding: 5px;
+        color: white;
     }
 }

@@ -1,40 +1,39 @@
 let currentPage = 1;
 const totalPages = 5;
 document.addEventListener('DOMContentLoaded', () => {
-    const muteButton = document.querySelector('.mute-button');
-    const audioPlayer = document.getElementById('audio-player');
+const muteButton = document.querySelector('.mute-button');
+const audioPlayer = document.getElementById('audio-player');
+// 設定音量為30%
+audioPlayer.volume = 0.3;
 
-    // 設定音量為30%
-    audioPlayer.volume = 0.3;
-
-    // 音樂自動播放設置
-    window.addEventListener('click', () => {
-        audioPlayer.play().catch(error => {
-            console.error('播放失敗:', error);
-        });
+// 音樂自動播放設置
+window.addEventListener('click', () => {
+    audioPlayer.play().catch(error => {
+        console.error('播放失敗:', error);
     });
+});
 
-    // 靜音按鈕功能
-    muteButton.addEventListener('click', () => {
-        if (audioPlayer.muted) {
-            audioPlayer.muted = false;
-            muteButton.querySelector('.white-icon').textContent = '🔊'; // 顯示音量圖標
-            muteButton.classList.remove('white-icon');
-        } else {
-            audioPlayer.muted = true;
-            muteButton.querySelector('.white-icon').textContent = '🔇'; // 顯示靜音圖標
-            muteButton.classList.add('white-icon');
-        }
-    });
+// 靜音按鈕功能
+muteButton.addEventListener('click', () => {
+    if (audioPlayer.muted) {
+        audioPlayer.muted = false;
+        muteButton.querySelector('.white-icon').textContent = '🔊'; // 顯示音量圖標
+        muteButton.classList.remove('white-icon');
+    } else {
+        audioPlayer.muted = true;
+        muteButton.querySelector('.white-icon').textContent = '🔇'; // 顯示靜音圖標
+        muteButton.classList.add('white-icon');
+    }
+});
 
-    // 初始顯示第 1 頁
-    showPage(currentPage);
+// 初始顯示第 1 頁
+showPage(currentPage);
 
-    document.getElementById('start-quiz').addEventListener('click', () => {
-        document.getElementById('start-page').style.display = 'none';
-        document.getElementById('quiz-form').style.display = 'block';
-        showPage(currentPage);  // 顯示測驗的第一頁
-    });
+document.getElementById('start-quiz').addEventListener('click', () => {
+    document.getElementById('start-page').style.display = 'none';
+    document.getElementById('quiz-form').style.display = 'block';
+    showPage(currentPage);  // 顯示測驗的第一頁
+});
 
     document.getElementById('submit-button').addEventListener('click', submitQuiz);
 });
@@ -50,6 +49,11 @@ document.getElementById('start-quiz').addEventListener('click', () => {
     document.getElementById('quiz-form').style.display = 'block';
     showPage(currentPage);  // 顯示測驗的第一頁
 });
+
+function goToStart() {
+    document.getElementById('quiz-form').style.display = 'none';
+    document.getElementById('start-page').style.display = 'block';
+}
 
 function nextPage() {
     if (isPageValid(currentPage)) {
@@ -147,6 +151,7 @@ function submitQuiz(event) {
             <div class="button-container">
                 <label class="result-button" onclick="restartQuiz()">再測一次</label>
                 <label class="result-button" onclick="shareResult('${imageUrl}', '${result}')">分享結果</label>
+                <label class="result-button" onclick="aboutUs()">關於我們</label>
             </div>`;
 
         // 隱藏所有頁面，顯示結果
@@ -166,6 +171,35 @@ function restartQuiz() {
     document.querySelectorAll('input[type="radio"]:checked').forEach(answer => answer.checked = false);
     showPage(currentPage);
 }
+
+function aboutUs() {
+    const startPage = document.getElementById('start-page');
+    const navItem = document.querySelector('nav ul li label'); 
+    const quizContainer = document.getElementById('quiz-container');
+    const h2 = document.querySelector('#quiz-container h2');
+    const content = document.querySelector('.content');
+
+    // Toggle between "關於我們" and "小測驗"
+    if (navItem.textContent === '關於我們') {
+        startPage.style.display = 'block';
+        quizContainer.style.display = 'none';
+        content.style.display = 'block';
+        h2.style.display = 'none';
+        navItem.textContent = '小測驗';
+    } else {
+        startPage.style.display = 'none';
+        quizContainer.style.display = 'block';
+        content.style.display = 'none';
+        h2.style.display = 'block';
+        document.getElementById('start-page').style.display = 'block';
+        document.getElementById('result').style.display = 'none';
+        document.getElementById('quiz-form').style.display = 'none';
+        currentPage = 1;
+        document.querySelectorAll('input[type="radio"]:checked').forEach(answer => answer.checked = false);
+        navItem.textContent = '關於我們';
+    }
+}
+
 
 function shareResult(imageUrl, result) {
     if (navigator.share) {

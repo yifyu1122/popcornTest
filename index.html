@@ -11,14 +11,18 @@
 
 <body>
     <header>
-    <button class="menu">&#9776;</button>
-    <img style="padding: 10px; width: 60px" src="popcorn.jpg" alt="測驗圖片">
-    <h1>爆米花心理小測驗</h1>
-    <nav>
-    <ul>         
-        <li><a href="https://www.facebook.com/profile.php?id=100064343486453&mibextid=ZbWKwL">關於我們</a></li>             
-    </ul>
-    </nav>  
+        <button class="menu">&#9776;</button>
+        <img class="logo" src="popcorn.jpg" alt="測驗圖片">
+        <h1>爆米花心理小測驗</h1>
+        <nav>
+            <ul>         
+                <li><label onclick="aboutUs()">關於我們</label></li>             
+            </ul>
+        </nav>  
+         <!-- 靜音按鈕 -->
+        <button class="mute-button">
+            <span class="white-icon">🔊</span>
+        </button>
     </header>   
     <main>
     
@@ -29,27 +33,23 @@
         <source src="What Kind of Dormmate Are You.mp3" type="audio/mpeg">
         您的瀏覽器不支援音樂哦
     </audio>
-
-    <!-- 靜音按鈕 -->
-    <button class="mute-button">
-        <span class="white-icon">🔊</span>
-      </button>
       
     <div id="quiz-container">
-        <h2>你是什麼樣的室友?</h2>
         <div id="start-page">
+            <h2>你是什麼樣的室友?</h2>
+            <hr style="margin: 10px;">
             <img class="pic" src="popcorn.jpg" alt="測驗圖片">
             <button id="start-quiz" class="start-button">開始測驗</button>
         </div>
         <form id="quiz-form" style="display: none;">
             <div id="page-1" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img class = "pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>你考上了爆米花動物學院，身為大一新生的你，在剛來到宿舍的第一天就被同寢的室友邀請去參加新生茶會活動，這個時候，你的想法或是心情會是如何的呢？
                     </p>
+                    <img class = "pic" src="popcorn.jpg" alt="測驗圖片">
                     <div class="option-container">
                         <input type="radio" name="question1" id="option1-1" value="dog" class="option-input" required>
-                        <label for="option1-1" class="option-button">對邀約感到興奮跟期待，希望可以玩得盡興、認識新的朋友</label>
+                        <label for="option1-1" class="option-button">對邀約感到興奮跟期待，<br>希望可以玩得盡興、認識新的朋友</label>
 
                         <input type="radio" name="question1" id="option1-2" value="rabbit" class="option-input">
                         <label for="option1-2" class="option-button">為了跟室友有話題還是去一下好了</label>
@@ -58,19 +58,22 @@
                         <label for="option1-3" class="option-button">只是為了打發時間，所以才去看看</label>
 
                         <input type="radio" name="question1" id="option1-4" value="salamander" class="option-input">
-                        <label for="option1-4" class="option-button">在去跟不去之間搖擺不定，其實更想在宿舍休息（但被拖去）</label>
+                        <label for="option1-4" class="option-button">在去跟不去之間搖擺不定，<br>其實更想在宿舍休息（但被拖去）</label>
                     </div>
                 </div>
                 <div class="navigation-buttons">
+                    <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
+                    <label for="prev-page" class="navigation-label" onclick="goToStart()">回開始</label>
+                    <p class="page-indicator"><small>第 1 題 ，  共 5 題</small></p>
                     <input id="next-page" type="radio" name="navigation" class="hidden-radio">
-                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一頁</label>
+                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一題</label>
                 </div>
-                <p class="page-indicator"><small>第 1 頁 ，  共 5 頁</small></p> 
+                 
             </div>
             <div id="page-2" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>你的室友兔兔看起來似乎很低落，兩隻耳朵都垂到地上了，宿舍的氣氛好像也不自覺的沉悶了起來，有觀察到這個情況的你會採取什麼樣的行動呢？</p>
+                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <div class="option-container">
                         <input type="radio" name="question2" id="option2-1" value="dog" class="option-input" required>
                         <label for="option2-1" class="option-button">用一個大大的抱抱來溫暖他</label>
@@ -87,17 +90,17 @@
                 </div>
                 <div class="navigation-buttons">
                     <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
-                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一頁</label>
-            
+                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一題</label>
+                    <p class="page-indicator"><small>第 2 題 ，  共 5 題</small></p> 
                     <input id="next-page" type="radio" name="navigation" class="hidden-radio">
-                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一頁</label>
+                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一題</label>
                 </div>
-                <p class="page-indicator"><small>第 2 頁 ，  共 5 頁</small></p> 
+                
             </div>
             <div id="page-3" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>鱷魚指責山椒魚把冷氣開太冷，於是兩位發生了爭執，這時候你決定……</p>
+                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <div class="option-container">
                         <input type="radio" name="question3" id="option3-1" value="dog" class="option-input" required>
                         <label for="option3-1" class="option-button">幫你覺得有理的那一方說話</label>
@@ -114,17 +117,17 @@
                 </div>
                 <div class="navigation-buttons">
                     <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
-                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一頁</label>
-            
+                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一題</label>
+                    <p class="page-indicator"><small>第 3 題 ，  共 5 題</small></p> 
                     <input id="next-page" type="radio" name="navigation" class="hidden-radio">
-                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一頁</label>
+                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一題</label>
                 </div>
-                <p class="page-indicator"><small>第 3 頁 ，  共 5 頁</small></p> 
+                
             </div>
             <div id="page-4" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>準備去洗澡時打開房門卻看到一件貼身衣物橫躺在門口，此時你的反應是……</p>
+                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <div class="option-container">
                         <input type="radio" name="question4" id="option4-1" value="dog" class="option-input" required>
                         <label for="option4-1" class="option-button">覺得超級好笑，叫室友出來看</label>
@@ -133,31 +136,31 @@
                         <label for="option4-2" class="option-button">在宿舍群組中以文字敘述協尋</label>
 
                         <input type="radio" name="question4" id="option4-3" value="cat" class="option-input">
-                        <label for="option4-3" class="option-button">堅信「生命自己會找到出路」，直接跨過去</label>
+                        <label for="option4-3" class="option-button">堅信「生命自己會找到出路」，<br>直接跨過去</label>
 
                         <input type="radio" name="question4" id="option4-4" value="salamander" class="option-input">
-                        <label for="option4-4" class="option-button">根本沒發現那個是貼身衣物，還拿起來觀察</label>
+                        <label for="option4-4" class="option-button">根本沒發現那個是貼身衣物，<br>還拿起來觀察</label>
                     </div>
                 </div>
                 <div class="navigation-buttons">
                     <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
-                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一頁</label>
-            
+                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一題</label>
+                    <p class="page-indicator"><small>第 4 題 ，  共 5 題</small></p> 
                     <input id="next-page" type="radio" name="navigation" class="hidden-radio">
-                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一頁</label>
+                    <label for="next-page" class="navigation-label" onclick="nextPage()">下一題</label>
                 </div>
-                <p class="page-indicator"><small>第 4 頁 ，  共 5 頁</small></p> 
+                
             </div>
             <div id="page-5" class="quiz-page" style="display: none;">
                 <div class="question">
-                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <p>有一天回到宿舍，你發現宿舍瀰漫著濃郁的香氣，定睛一看原來是老虎室友在吃肉羹。旁邊的山羊室友看起來似乎有點難受，此時你決定？</p>
+                    <img class="pic" src="popcorn.jpg" alt="測驗圖片">
                     <div class="option-container">
                         <input type="radio" name="question5" id="option5-1" value="dog" class="option-input" required>
-                        <label for="option5-1" class="option-button">老虎怎麼自己吃沒分給山羊，訂披薩讓大家一起吃</label>
+                        <label for="option5-1" class="option-button">老虎怎麼自己吃沒分給山羊，<br>訂披薩讓大家一起吃</label>
 
                         <input type="radio" name="question5" id="option5-2" value="rabbit" class="option-input">
-                        <label for="option5-2" class="option-button">詢問山羊問他還好嗎，要不要和他一起出去</label>
+                        <label for="option5-2" class="option-button">詢問山羊問他還好嗎，<br>要不要和他一起出去</label>
 
                         <input type="radio" name="question5" id="option5-3" value="cat" class="option-input">
                         <label for="option5-3" class="option-button">山羊如果真的受不了應該會自己說的</label>
@@ -168,22 +171,56 @@
                 </div>
                 <div class="navigation-buttons">
                     <input id="prev-page" type="radio" name="navigation" class="hidden-radio">
-                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一頁</label>
-            
+                    <label for="prev-page" class="navigation-label" onclick="prevPage()">上一題</label>
+                    <p class="page-indicator"><small>第 5 題 ，  共 5 題</small></p> 
                     <input id="next-page" type="radio" name="navigation" class="hidden-radio">
                     <label for="next-page" class="navigation-label" onclick="submitQuiz()">提交答案</label>
-                </div>
-                <p class="page-indicator"><small>第 5 頁 ，  共 5 頁</small></p> 
+                </div>       
             </div>
         </form>
         <div id="result" class="quiz-form" style="display: none;"></div>
     </div>
     </section>
+    <div class="content" style="display: none;">
+        <div class="section about-us">
+            <h2>關於我們</h2>
+            <p style='text-align: center; margin: 10px;'>心理輔導組 爆米花志工團 歡迎你的加入!</p>
+            <p style='text-align: center; margin: 10px;'>我們是一群擁有熱情、溫馨的志工,</p>
+            <p style='text-align: center; margin: 10px;'>在爆米花志工團裡可以認識許多好朋友、</p>
+            <p style='text-align: center; margin: 10px;'>可以協助心理衛生的推廣工作、</p>
+            <p style='text-align: center; margin: 10px;'>可以參加團體和工作坊………………。</p>
+            <p style='text-align: center; margin: 10px;'>好多好多感人的經驗, 說都說不完。</p>
+            <p style='text-align: center; margin: 10px;'>給期待想更瞭解自己的你, 有個可以駐足的地方;</p> 
+            <p style='text-align: center; margin: 10px;'>同時, 也希望能將這份溫情, 傳達給其他的人。</p>
+        </div>
+        <div class="section benefits">
+            <h3>米花好康爆你知:</h3>
+            <ul>
+                <li style='padding: 5px'>參加志工自我成長課程, 增進自我瞭解及人際溝通技巧。</li>
+                <li style='padding: 5px'>參與活動推廣工作, 在個人專長與經驗上加分。</li>
+                <li style='padding: 5px'>培訓課程與服務期滿, 獲頒志工服務證明。</li>
+            </ul>
+        </div>
+        <div class="section flavors">
+            <h3>想吃什麼口味的爆米花:</h3>
+            <p style='text-align: center; margin: 10px;'>行政股、活動股、美宣股、採訪股</p>
+        </div>
+    </div>
     </main>
     <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100064343486453&mibextid=ZbWKwL" target="_blank">
+                <img src="facebook-icon.png" alt="Facebook" class="icon">
+            </a>
+            <a href="https://www.instagram.com/ntue_popcorn" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram" class="icon">
+            </a>
+            <a href="mailto:popcornntue@gmail.com">
+                <img src="email-icon.png" alt="Email" class="icon">
+            </a>
+        </div>
         <p>Copyright © 2024 爆米花志工團 All Rights Reserved.</p>
     </footer>
     <script src="test.js"></script>
 </body>
-
 </html>
