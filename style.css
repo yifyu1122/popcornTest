@@ -9,13 +9,13 @@ main {
 
 h1 {
     color:white;
-    position:absolute;
-    left:100px;
-    top:0;
+    position: absolute;
+    left: 100px;
+    top: 0;
     line-height: 80px;
     background-repeat: no-repeat;
     background-position: center;
-    width:280px;
+    width: 280px;
 }
 h2 {
     color:white;
@@ -313,7 +313,6 @@ label {
 .content {
     display: none;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
     color: #fff;
     border-radius: 10px;
     margin: 20px;
@@ -324,28 +323,72 @@ label {
     margin-bottom: 20px;
 }
 
+
+.about-us {
+    padding: 20px;
+    background-color: rgba(198, 229, 231, 0.8);
+    color: #333;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 .about-us h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #444;
+}
+
+.about-us h3 {
     font-size: 24px;
-    border-bottom: 2px solid #ffcc00;
-    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #555;
 }
 
-.benefits h3 {
-    font-size: 20px;
-    border-bottom: 1px solid #ffcc00;
-    padding-bottom: 5px;
+
+.about-us p {
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
-.flavors h3 {
-    font-size: 20px;
-    border-bottom: 1px solid #ffcc00;
-    padding-bottom: 5px;
-}
-
-ul {
+.about-us ul {
     list-style-type: disc;
     margin-left: 20px;
+    margin-bottom: 20px;
 }
+
+.about-us li {
+    margin-bottom: 10px;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 12px 0;
+    padding: 10px 20px;
+    background-color: #45abde5b;
+    border-left: 5px solid #00e5fffa;
+    color: #0040ff;
+    font-size: small;
+    font-weight: bold;
+    position: relative; /* 使 footer 可以在 blockquote 中相對定位 */
+}
+
+blockquote p {
+    margin: 0;
+}
+
+blockquote div {
+    text-align: right;
+    font-style: normal;
+    font-size: smaller;
+    font-weight: normal;
+}
+
 
 footer {
     position: relative;
