@@ -1,5 +1,5 @@
 let currentPage = 1;
-const totalPages = 5;
+const totalPages = 7;
 document.addEventListener('DOMContentLoaded', () => {
 const muteButton = document.querySelector('.mute-button');
 const audioPlayer = document.getElementById('audio-player');
@@ -111,7 +111,7 @@ function submitQuiz(event) {
             } else if (result.includes('dog') && result.includes('salamander')) {
                 result = answers[0]?.value === 'dog' ? '狗狗' : '蠑螈';
             } else if (result.includes('cat') && result.includes('rabbit')) {
-                result = answers[4]?.value === 'cat' ? '貓貓' : '兔兔';
+                result = answers[5]?.value === 'cat' ? '貓貓' : '兔兔';
             } else if (result.includes('cat') && result.includes('salamander')) {
                 result = answers[3]?.value === 'cat' ? '貓貓' : '蠑螈';
             } else if (result.includes('rabbit') && result.includes('salamander')) {
