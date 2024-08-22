@@ -145,13 +145,13 @@ function submitQuiz(event) {
         if (imageUrl) {
             resultText = `<img src="${imageUrl}" alt="${result}" style="max-width: 100%;"><br>` + resultText;
         }
-        resultText += '<br><small style="color: white; display: block; text-align: center; padding: 5px">長按上方結果圖就能儲存囉！</small>';
+        resultText += '<br><small style="color: black; display: block; text-align: center; padding: 5px">長按上方結果圖就能儲存囉！</small>';
 
         resultText += `
             <div class="button-container">
                 <label class="result-button" onclick="restartQuiz()">再測一次</label>
                 <label class="result-button" onclick="shareResult('${imageUrl}', '${result}')">分享結果</label>
-                <label class="result-button" onclick="aboutUs()">關於我們</label>
+                <label class="option-button" onclick="aboutUs()" style="font-size: 16px;">關於我們</label>
             </div>`;
 
         // 隱藏所有頁面，顯示結果
@@ -173,31 +173,14 @@ function restartQuiz() {
 }
 
 function aboutUs() {
-    const startPage = document.getElementById('start-page');
-    const navItem = document.querySelector('nav ul li label'); 
     const quizContainer = document.getElementById('quiz-container');
     const h2 = document.querySelector('#quiz-container h2');
     const content = document.querySelector('.content');
 
-    // Toggle between "關於我們" and "小測驗"
-    if (navItem.textContent === '關於我們') {
-        startPage.style.display = 'block';
-        quizContainer.style.display = 'none';
-        content.style.display = 'block';
-        h2.style.display = 'none';
-        navItem.textContent = '小測驗';
-    } else {
-        startPage.style.display = 'none';
-        quizContainer.style.display = 'block';
-        content.style.display = 'none';
-        h2.style.display = 'block';
-        document.getElementById('start-page').style.display = 'block';
-        document.getElementById('result').style.display = 'none';
-        document.getElementById('quiz-form').style.display = 'none';
-        currentPage = 1;
-        document.querySelectorAll('input[type="radio"]:checked').forEach(answer => answer.checked = false);
-        navItem.textContent = '關於我們';
-    }
+    document.getElementById('result').style.display = 'none';
+    quizContainer.style.display = 'none';
+    content.style.display = 'block';
+    h2.style.display = 'none';
 }
 
 

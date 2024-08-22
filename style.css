@@ -8,7 +8,7 @@ main {
 }
 
 h1 {
-    color:white;
+    color:rgb(0, 0, 0);
     position: absolute;
     left: 100px;
     top: 0;
@@ -36,7 +36,7 @@ h2 {
         0 -2px 0 #fff; /* 上 */
 }
 header {
-    background-color:#fed360cc;
+    background-color:#fff0c6cc;
     height:80px;
     width:100%;
     position:fixed; 
@@ -78,7 +78,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('blueink.png'); /* 更換為你的背景圖像 */
+    background-image: url('background.jpg'); /* 更換為你的背景圖像 */
     background-size: cover; /* 使背景圖像覆蓋整個容器 */
     background-position: center; /* 背景圖像居中 */
     background-repeat: no-repeat; /* 防止背景圖像重複 */
@@ -97,7 +97,7 @@ body {
     max-width: 600px;
     margin: 100px auto 20px auto;
     padding: 20px;
-    background-color: transparent;
+    background-color: #ffdd84cc;
     border: 5px white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -118,7 +118,7 @@ body {
 .mute-button {
     position: absolute;
     top: 15px;
-    right: 10px;
+    right: 0px;
     background-color: transparent;
     color: #fff;
     border: none;
@@ -149,7 +149,7 @@ body {
 
 /* 開始測驗按鈕樣式 */
 .start-button {
-    background-color: rgb(242, 170, 88); /* 按鈕背景顏色 */
+    background-color: #edc690; /* 按鈕背景顏色 */
     border: 2px solid #cccccca1; /* 按鈕邊框顏色 */
     border-radius: 50px; /* 圓形按鈕 */
     padding: 15px 30px;
@@ -166,7 +166,7 @@ body {
 }
 
 .start-button:hover {
-    background-color: rgb(226, 142, 45); /* 懸停背景顏色 */
+    background-color: #edc690; /* 懸停背景顏色 */
     color: #fff; /* 懸停文字顏色 */
 }
 
@@ -202,8 +202,8 @@ body {
     border: 2px solid #fee195; /* 按鈕邊框顏色 */
     border-radius: 10px;
     cursor: pointer;
-    background-color: #fed360; /* 按鈕背景顏色 */
-    color: #fff; /* 按鈕文字顏色 */
+    background-color: #fff0c6; /* 按鈕背景顏色 */
+    color: rgb(0, 0, 0) !important; /* 按鈕文字顏色 */
     font-size: 14px;
     line-height: 0.8;
     text-align: center;
@@ -213,7 +213,7 @@ body {
 }
 
 .navigation-label:hover {
-    background-color: #c4a861; /* 懸停背景顏色 */
+    background-color: #dccb9d; /* 懸停背景顏色 */
     border-color: #c29c33;
 }
 
@@ -225,10 +225,6 @@ body {
     justify-content: space-between; 
 }
 
-.navigation-label:active {
-    background-color: #d0f0c0;
-    border-color: #a0d0a0;
-}
 
 .page-indicator {
     margin: 0 auto;
@@ -253,7 +249,7 @@ body {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 50px;
-    background-color: rgb(242, 170, 88); /* 按鈕背景顏色 */
+    background-color: #edc690; /* 按鈕背景顏色 */
     border: 2px solid #ccc;
     text-align: center;
     cursor: pointer;
@@ -261,13 +257,9 @@ body {
 }
 
 .result-button:hover {
-    background-color: rgb(226, 142, 45); /* 懸停背景顏色 */
+    background-color: #e28e2d; /* 懸停背景顏色 */
 }
 
-.result-button:active {
-    background-color: #d0f0c0;
-    border-color: #a0d0a0;
-}
 
 .option-container {
     display: flex;
@@ -282,7 +274,7 @@ body {
     padding: 5px 10px;
     margin: 0 auto;
     border-radius: 50px;
-    background-color: rgb(242, 170, 88); /* 按鈕背景顏色 */
+    background-color: #edc690; /* 按鈕背景顏色 */
     border: 2px solid #ccc;
     text-align: center;
     cursor: pointer;
@@ -340,7 +332,7 @@ label {
 
 .about-us {
     padding: 20px;
-    background-color: #a4c1dfcc;
+    background-color: #ffdd84cc;
     color: #333;
     line-height: 1.6;
     max-width: 900px;
@@ -410,7 +402,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color:#fee195;
+    background-color:#fff0c6;
     color:#B7B7B7;
     height:100px;
     display:flex;
@@ -448,12 +440,7 @@ footer {
         cursor:pointer;
     }
 
-    header ul {
-        position:absolute;
-        right: 70px;
-        top:0;
-        line-height:80px;
-    }
+
 
     .logo {
         padding: 10px; 
@@ -462,9 +449,9 @@ footer {
     }
 
     h1 {
-        color:white;
+        color:rgb(0, 0, 0);
         position:absolute;
-        left:80px;
+        left:70px;
         top:0;
         line-height: 80px;
         background-repeat: no-repeat;
@@ -483,5 +470,20 @@ footer {
     #quiz-container p {
         padding: 5px;
         color: white;
+    }
+    .option-button {
+        display: inline-block;
+        width: 95%;
+        padding: 5px 10px;
+        margin: 0 auto;
+        border-radius: 50px;
+        background-color: #edc690; /* 按鈕背景顏色 */
+        border: 2px solid #ccc;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+        font-family: 'Source Han Sans', sans-serif; /* 設置字體 */
+        font-size: 14px;
+        font-weight: bold;
     }
 }
