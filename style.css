@@ -78,7 +78,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('background.jpg'); /* 更換為你的背景圖像 */
+    background-image: url('image/background.jpg'); /* 更換為你的背景圖像 */
     background-size: cover; /* 使背景圖像覆蓋整個容器 */
     background-position: center; /* 背景圖像居中 */
     background-repeat: no-repeat; /* 防止背景圖像重複 */
@@ -178,8 +178,16 @@ body {
     display: none;
 }
 
+#quiz-form {
+    display: flex;     
+    justify-content: center; 
+    align-items: center;     
+    flex-direction: column; 
+    text-align: center;     
+}
+
 .question {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .question p {
@@ -221,7 +229,6 @@ body {
     display:  flex;
     align-items: center; 
     text-align: center;
-    margin-top: 20px;
     justify-content: space-between; 
 }
 
@@ -263,16 +270,30 @@ body {
 
 .option-container {
     display: flex;
+    box-sizing: border-box; 
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    text-align: center;
     padding: 0 20px;
 }
 
 .option-button {
     display: inline-block;
-    width: 80%;
+    width: 95%;
     padding: 5px 10px;
-    margin: 0 auto;
+    border-radius: 50px;
+    background-color: #edc690; /* 按鈕背景顏色 */
+    border: 2px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-family: 'Source Han Sans', sans-serif; /* 設置字體 */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.about-button {
+    padding: 5px 10px;
     border-radius: 50px;
     background-color: #edc690; /* 按鈕背景顏色 */
     border: 2px solid #ccc;
@@ -358,8 +379,8 @@ label {
 
 
 .about-us p {
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .about-us ul {
@@ -370,6 +391,7 @@ label {
 
 .about-us li {
     margin-bottom: 10px;
+    font-size: 15px;
 }
 
 blockquote {
@@ -387,6 +409,7 @@ blockquote {
 
 blockquote p {
     margin: 0;
+    font-size: 14px !important;
 }
 
 blockquote div {
@@ -475,7 +498,6 @@ footer {
         display: inline-block;
         width: 95%;
         padding: 5px 10px;
-        margin: 0 auto;
         border-radius: 50px;
         background-color: #edc690; /* 按鈕背景顏色 */
         border: 2px solid #ccc;
