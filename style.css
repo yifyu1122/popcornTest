@@ -18,23 +18,12 @@ h1 {
     width: 280px;
 }
 h2 {
-    color:white;
-    position:relative;
+    color: black;
+    font-size: 2em;
+    position: relative;
     text-align: center;
 }
-.bordered-text {
-    font-size: 2em; /* 可以根據需要調整字體大小 */
-    color: #000; /* 文字顏色 */
-    text-shadow: 
-        2px 2px 0 #fff, /* 上 */
-        -2px -2px 0 #fff, /* 下 */
-        2px -2px 0 #fff, /* 右 */
-        -2px 2px 0 #fff, /* 左 */
-        2px 0 0 #fff, /* 右 */
-        -2px 0 0 #fff, /* 左 */
-        0 2px 0 #fff, /* 下 */
-        0 -2px 0 #fff; /* 上 */
-}
+
 header {
     background-color:#fff0c6cc;
     height:80px;
@@ -65,10 +54,6 @@ header li:hover {
 
 body {
     font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 /* 設置背景圖像的容器 */
@@ -132,6 +117,17 @@ body {
 
     z-index: 1000; /* 確保圖標在最上層 */
 }
+
+.return {
+    position: absolute;
+    top: 95px;
+    left: 15px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    width: 30px;
+}
+
 .logo {
     padding: 10px; 
     width: 60px;
@@ -421,19 +417,21 @@ blockquote div {
 
 
 footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color:#fff0c6;
-    color:#B7B7B7;
-    height:100px;
-    display:flex;
-    flex-direction: column;
+    background-color: #fff0c6;
+    color: #B7B7B7;
+    height: 100px;
+    display: flex;
     align-items: center;
     font-size: 14px;
     padding: 15px;
     box-sizing: border-box;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 .social-icons {
     display: flex;

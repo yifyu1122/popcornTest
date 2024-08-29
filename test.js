@@ -13,6 +13,12 @@ window.addEventListener('click', () => {
     });
 });
 
+window.addEventListener('unload', function () {
+    const audioPlayer = document.getElementById('audio-player');
+    audioPlayer.pause();  // 暫停音樂
+    audioPlayer.currentTime = 0;  // 重置播放時間
+});
+
 // 靜音按鈕功能
 muteButton.addEventListener('click', () => {
     if (audioPlayer.muted) {
@@ -50,16 +56,43 @@ document.getElementById('start-quiz').addEventListener('click', () => {
     showPage(currentPage);  // 顯示測驗的第一頁
 });
 
+function adjustFooterPosition() {
+    const footer = document.querySelector('footer');
+    const startPage = document.getElementById('start-page');
+
+    if (startPage.style.display === 'none') {
+        // 如果顯示 start-page，則設置 footer 為 fixed
+        footer.style.position = 'relative';
+        footer.style.bottom = '0';
+        footer.style.width = '100%';
+    } else {
+        // 在其他頁面中，將 footer 設置為相對定位
+        footer.style.position = 'fixed';
+    }
+}
+
+// 在顯示或隱藏 start-page 時調用這個函數
+document.getElementById('start-quiz').addEventListener('click', () => {
+    document.getElementById('start-page').style.display = 'none';
+    document.getElementById('quiz-form').style.display = 'block';
+    adjustFooterPosition(); // 調整 footer 位置
+});
+
 function goToStart() {
     document.getElementById('quiz-form').style.display = 'none';
     document.getElementById('start-page').style.display = 'block';
+    adjustFooterPosition(); // 調整 footer 位置
 }
+
+// 確保在頁面加載時正確調整 footer 位置
+document.addEventListener('DOMContentLoaded', adjustFooterPosition);
 
 function nextPage() {
     if (isPageValid(currentPage)) {
         if (currentPage < totalPages) {
             currentPage++;
             showPage(currentPage);
+            window.scrollTo(0, 0);
         }
     } else {
         alert("你沒有選到選項哦");
@@ -80,6 +113,7 @@ function isPageValid(pageNumber) {
 }
 
 function submitQuiz(event) {
+    window.scrollTo(0, 0);
     if (isPageValid(currentPage)) {
         const resultDiv = document.getElementById('result');
 
@@ -151,7 +185,7 @@ function submitQuiz(event) {
             <div class="button-container">
                 <label class="result-button" onclick="restartQuiz()">再測一次</label>
                 <label class="result-button" onclick="shareResult('${imageUrl}', '${result}')">分享結果</label>
-                <label class="about-button" onclick="aboutUs()">關於我們</label>
+                <label class="about-button" onclick="aboutUs()"><strong>關於我們</strong></label>
             </div>`;
 
         // 隱藏所有頁面，顯示結果
@@ -176,11 +210,23 @@ function aboutUs() {
     const quizContainer = document.getElementById('quiz-container');
     const h2 = document.querySelector('#quiz-container h2');
     const content = document.querySelector('.content');
+    const back = document.querySelector('.return');
 
     document.getElementById('result').style.display = 'none';
     quizContainer.style.display = 'none';
     content.style.display = 'block';
     h2.style.display = 'none';
+    back.style.display = 'block';
+
+    window.scrollTo(0, 0);
+
+    back.addEventListener('click', () => {
+        document.getElementById('result').style.display = 'block';
+        quizContainer.style.display = 'block';
+        content.style.display = 'none';
+        h2.style.display = 'block';
+        back.style.display = 'none';
+    });
 }
 
 

@@ -27,10 +27,12 @@
             <source src="What Kind of Dormmate Are You.mp3" type="audio/mpeg">
             您的瀏覽器不支援音樂哦
         </audio>
-        
+
+        <img src="image/return.png" alt="Return" class="return"  style="display: none;">
+    
         <div id="quiz-container">
             <div id="start-page">
-                <h2 class="bordered-text">你是什麼樣的室友?</h2>
+                <h2>你是什麼樣的室友?</h2>
                 <hr style="margin: 10px;">
                 <img class="pic" src="image/popcorn.jpg" alt="測驗圖片">
                 <button id="start-quiz" class="start-button">開始測驗</button>
@@ -38,7 +40,7 @@
             <form id="quiz-form" style="display: none;">
                 <div id="page-1" class="quiz-page" style="display: none;">
                     <div class="question">
-                        <p style="color:black;">你考上了爆米花動物學院，身為大一新生的你，剛來到宿舍就被同寢的室友邀請去參加新生茶會活動，這個時候，你的想法或是心情是如何的呢？
+                        <p style="color:black; text-align:start;">你考上了爆米花動物學院，身為大一新生的你，剛來到宿舍就被同寢的室友邀請去參加新生茶會活動，這個時候，你的想法或是心情是如何的呢？
                         </p>
                         <img class = "pic" src="image/popcorn.jpg" alt="測驗圖片">
                         <div class="option-container">
@@ -66,7 +68,7 @@
                 </div>
                 <div id="page-2" class="quiz-page" style="display: none;">
                     <div class="question">
-                        <p style="color:black;">你的室友大白兔看起來似乎很低落，耳朵都垂到地上了，整個宿舍的氣氛都因為他而變得沉悶了起來，那請問你會採取什麼樣的行動呢？</p>
+                        <p style="color:black; text-align:start;">你的室友大白兔看起來似乎很低落，耳朵都垂到地上了，整個宿舍的氣氛都因為他而變得沉悶了起來，那請問你會採取什麼樣的行動呢？</p>
                         <img class="pic" src="image/popcorn.jpg" alt="測驗圖片">
                         <div class="option-container">
                             <input type="radio" name="question2" id="option2-1" value="dog" class="option-input" required>
@@ -93,7 +95,7 @@
                 </div>
                 <div id="page-3" class="quiz-page" style="display: none;">
                     <div class="question">
-                        <p style="color:black;">隔壁房裡北極熊指責鱷魚把冷氣擅自關掉，於是兩位發生了爭執，於是你決定……</p>
+                        <p style="color:black; text-align:start;">隔壁房裡北極熊指責鱷魚把冷氣擅自關掉，於是兩位發生了爭執，於是你決定……</p>
                         <img class="pic" src="image/popcorn.jpg" alt="測驗圖片">
                         <div class="option-container">
                             <input type="radio" name="question3" id="option3-1" value="dog" class="option-input" required>
@@ -120,7 +122,7 @@
                 </div>
                 <div id="page-4" class="quiz-page" style="display: none;">
                     <div class="question">
-                        <p style="color:black;">準備去洗澡時打開房門卻看到一件貼身衣物橫躺在門口，此時你的反應是……</p>
+                        <p style="color:black; text-align:start;">準備去洗澡時打開房門卻看到一件貼身衣物橫躺在門口，此時你的反應是……</p>
                         <img class="pic" src="image/popcorn.jpg" alt="測驗圖片">
                         <div class="option-container">
                             <input type="radio" name="question4" id="option4-1" value="dog" class="option-input" required>
@@ -147,7 +149,7 @@
                 </div>
                 <div id="page-5" class="quiz-page" style="display: none;">
                     <div class="question">
-                        <p style="color:black;">在眾人對著門外的貼身衣物細細打量時，大白兔看見布料下似乎有東西在......移動?緊接著一道黑影飛快地竄出，你的反應是......</p>
+                        <p style="color:black; text-align:start;">在眾人對著門外的貼身衣物細細打量時，大白兔看見布料下似乎有東西在......移動?緊接著一道黑影飛快地竄出，你的反應是......</p>
                         <img class="pic" src="image/popcorn.jpg" alt="測驗圖片">
                         <div class="option-container">
                             <input type="radio" name="question5" id="option5-1" value="dog" class="option-input" required>
@@ -173,7 +175,7 @@
                 </div>
                 <div id="page-6" class="quiz-page" style="display: none;">
                     <div class="question">
-                        <p style="color:black;">一天回到宿舍，你發現宿舍瀰漫著濃郁的香氣，定睛一看原來是老虎室友在吃肉羹。旁邊的山羊室友看起來似乎有點難受，此時你決定？</p>
+                        <p style="color:black; text-align:start;">一天回到宿舍，你發現宿舍瀰漫著濃郁的香氣，定睛一看原來是老虎室友在吃肉羹。旁邊的山羊室友看起來似乎有點難受，此時你決定？</p>
                         <img class="pic" src="image/popcorn.jpg" alt="測驗圖片">
                         <div class="option-container">
                             <input type="radio" name="question6" id="option6-1" value="dog" class="option-input" required>
@@ -200,7 +202,7 @@
                 </div>
                 <div id="page-7" class="quiz-page" style="display: none;">
                     <div class="question">
-                        <p style="color:black;">一天下課，你回到宿舍，打開門卻發現你的室友的秘密，對方苦苦哀求請你保密，那這個時候你的反應是......?</p>
+                        <p style="color:black; text-align:start;">一天下課，你回到宿舍，打開門卻發現你的室友的秘密，對方苦苦哀求請你保密，那這個時候你的反應是......?</p>
                         <img class="pic" src="image/popcorn.jpg" alt="測驗圖片">
                         <div class="option-container">
                             <input type="radio" name="question7" id="option7-1" value="dog" class="option-input" required>
@@ -238,21 +240,23 @@
                     <p style="font-weight: bold; text-align: center;">沒有任何情緒或言語是微不足道的。</p>
                     <p>在心理師的引導與培訓下，我們不只是學習專業的知識，也相互分享和傾聽對方的故事，並提供正向的回饋。</p>
                     <br>
-                    <p>這一切就像爆米花的過程一樣
+                    <p style="text-align: center;">這一切就像爆米花的過程一樣
                     <br>——雖然不是每個人都知道，
                     <br>但爆米花的香甜其實是來自於它
-                    <br>堅硬的外殼與體內包含的水分；
+                    <br>堅硬的外殼🌾與體內包含的水分💧；
                     <br>我們原諒自己對於
                     <br>外界的防備和內在淚水的軟弱。
                     <br>當溫度上升、當我們的能力成長，
                     <br>玉米粒內部的水分化為蒸汽，
                     <br>我們將這份關心的溫暖香氣擴散出去
                     <br>——爆米花志工團除了自我成長，
-                    <br>也致力於推廣心理健康的重要。</p>
-                    <p style="font-weight: bold; text-align: center;">加入爆米花</p>
-                    <p style="font-weight: bold; text-align: center;">把這當成家</p>
-                    <p style="font-weight: bold; text-align: center;">心靈不疲乏</p>
-                    <p>希望你能在爆米花志工團中
+                    <br>也致力於推廣心理健康❤️的重要。</p>
+                    <br>
+                    <p style="font-weight: bold; text-align: center; font-size:large;">加入爆米花</p>
+                    <p style="font-weight: bold; text-align: center; font-size:large;">把這當成家</p>
+                    <p style="font-weight: bold; text-align: center; font-size:large;">心靈不疲乏</p>
+                    <br>
+                    <p style="text-align: center;">希望你能在爆米花志工團中
                     <br>收穫更美好的自己。</p>
                 </section>
             
@@ -262,24 +266,26 @@
                         <p>「是的，所有的傷口都渴望發言，所有受傷的總要伺機傷害......<br>然而除了傷害，有沒有其他的方法可以離開，離開這受傷的世界對我們的傷害?」</p>
                         <div>(擷取自胡淑雯《太陽的血是黑的 》)</div>
                     </blockquote>
-                    <p>你是否渴望</p><p>能<strong>陪伴朋友</strong>走在<strong>療癒</strong>的路上，</p>
-                    <p>亦或是你想要從<strong>專業的角度</strong></p><p><strong>學習助人</strong>的心理？</p>
+                    <p style="text-align: center;">你是否渴望</p>
+                    <p style="text-align: center;">能<strong>陪伴朋友</strong>走在<strong>療癒</strong>的路上，</p>
+                    <p style="text-align: center;">亦或是你想要從<strong>專業的角度</strong></p>
+                    <p style="text-align: center;"><strong>學習助人</strong>的心理？</p>
                     <br>
-                    <p>本學期米花的課程</p>
-                    <p>會以<strong>自我探索</strong>為核心，</p>
-                    <p>藉由四位<strong>專業心理師</strong>的教導與協助，</p>
-                    <p>社員得以進行覺察並學習到</p>
-                    <p>「 <strong>情緒壓力調適</strong>」</p>
-                    <p>「 <strong>同理心與傾聽</strong>」</p>
-                    <p>「 <strong>自殺防治</strong>」</p>
-                    <p>等方面相關重要的技巧和知識。</p>
+                    <p style="text-align: center;">本學期米花的課程</p>
+                    <p style="text-align: center;">會以<strong>自我探索</strong>為核心，</p>
+                    <p style="text-align: center;">藉由四位<strong>專業心理師</strong>的教導與協助，</p>
+                    <p style="text-align: center;">社員得以進行覺察並學習到</p>
+                    <p style="text-align: center;">「 <strong>情緒壓力調適</strong>」</p>
+                    <p style="text-align: center;">「 <strong>同理心與傾聽</strong>」</p>
+                    <p style="text-align: center;">「 <strong>自殺防治</strong>」</p>
+                    <p style="text-align: center;">等方面相關重要的技巧和知識。</p>
                     <br>
-                    <p>除此之外，我們還有幾次的</p>
-                    <p><strong>心理健康周籌劃課程</strong>，</p>
-                    <p>這次心健周宣導主題為<strong>多元性別</strong>，</p>
-                    <p>我們會以<strong>小遊戲</strong>或<strong>故事</strong>的方式</p>
-                    <p>向大家傳遞我們的理念</p>
-                    <p>與<strong>心理衛生知識</strong>喔！</p>
+                    <p style="text-align: center;">除此之外，我們還有幾次的</p>
+                    <p style="text-align: center;"><strong>心理健康周籌劃課程</strong>，</p>
+                    <p style="text-align: center;">這次心健周宣導主題為<strong>多元性別</strong>，</p>
+                    <p style="text-align: center;">我們會以<strong>小遊戲</strong>或<strong>故事</strong>的方式</p>
+                    <p style="text-align: center;">向大家傳遞我們的理念</p>
+                    <p style="text-align: center;">與<strong>心理衛生知識</strong>喔！</p>
                 </section>
             
                 <section class="section perks">
@@ -293,21 +299,21 @@
             
                 <section class="section counseling">
                     <h3>溫馨歇腳處-心理輔導組</h3>
-                    <p>剛進入一個嶄新環境的你，</p>
-                    <p>有自己的方向了嗎？</p>
-                    <p>對你而言，什麼是最重要的呢？</p>
+                    <p style="text-align: center;">剛進入一個嶄新環境的你，</p>
+                    <p style="text-align: center;">有自己的方向了嗎？</p>
+                    <p style="text-align: center;">對你而言，什麼是最重要的呢？</p>
                     <p>未來的大學生活，是完全可任由你自由揮灑的四年，但也因為不同於以往的高中生活，可能暫時會讓你手足無措。</p>
-                    <p style="font-weight: bold;">沒關係，可以多做一些嘗試！</p>
+                    <p style="font-weight: bold; text-align: center;">沒關係，可以多做一些嘗試！</p>
                     <p>越是認識自己和別人，越能發現自己心裡最想要走的路是什麼模樣。</p>
-                    <p style="font-weight: bold;">心理輔導組，願意陪伴你成長和思考。</p>
+                    <p style="font-weight: bold; text-align: center;">心理輔導組，願意陪伴你成長和思考。</p>
                     <h4>目前心理輔導組所提供的服務有</h4>
                     <ul>
                         <li><strong>個別諮詢與心理諮商:</strong> <br>諮商晤談是一種過程，在晤談中，心理師能陪伴你面對問題，並提供資訊，協助你尋求可能的解決之道。在課業、生涯、人際關係或是生活上遇到困難，都可以尋求心理諮商。</li>
                         <li><strong>心理測驗與解釋:</strong> <br>想要透過測驗了解自己，或是了解自己的未來方向，也可以使用心理測驗方式做初步的判定，能幫助你從專業數據化的角度做客觀的分析。</li>
                         <li><strong>心理健康推廣活動:</strong> <br>成長團體、工作坊、主題式宣導週、演講、班級座談……等等，各式各樣的心理衛生活動，內容精彩！主題包括人際溝通、生涯發展、情感互動、家庭關係、自我成長與學習等等，任何有關「心」的議題我們都很關心！</li>
                     </ul>
-                    <p><strong>溫馨歇腳處所在:</strong> 至善樓203 歡迎你來！</p>
-                    <p><strong>電話聯繫方式:</strong> 02-66396688 轉 85111~85116</p>
+                    <p><strong>溫馨歇腳處所在:</strong><br><strong>至善樓203</strong> 歡迎你來！</p>
+                    <p><strong>電話聯繫方式:</strong><br><strong>02-66396688</strong> 轉 <strong>85111~85116</strong></p>
                 </section>
             </div>
         </div>
