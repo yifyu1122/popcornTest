@@ -13,7 +13,7 @@ window.addEventListener('click', () => {
     });
 });
 
-window.addEventListener('unload', function () {
+window.addEventListener('beforeunload', function () {
     const audioPlayer = document.getElementById('audio-player');
     audioPlayer.pause();  // 暫停音樂
     audioPlayer.currentTime = 0;  // 重置播放時間
@@ -50,42 +50,37 @@ function showPage(pageNumber) {
     }
 }
 
-document.getElementById('start-quiz').addEventListener('click', () => {
-    document.getElementById('start-page').style.display = 'none';
-    document.getElementById('quiz-form').style.display = 'block';
-    showPage(currentPage);  // 顯示測驗的第一頁
-});
 
 function adjustFooterPosition() {
     const footer = document.querySelector('footer');
-    const startPage = document.getElementById('start-page');
+    const contentHeight = document.body.scrollHeight; 
+    const windowHeight = window.innerHeight; 
 
-    if (startPage.style.display === 'none') {
-        // 如果顯示 start-page，則設置 footer 為 fixed
-        footer.style.position = 'relative';
+    if (contentHeight < windowHeight) {
+        footer.style.position = 'fixed';
         footer.style.bottom = '0';
         footer.style.width = '100%';
     } else {
-        // 在其他頁面中，將 footer 設置為相對定位
-        footer.style.position = 'fixed';
+        footer.style.position = 'relative';
+        document.body.style.paddingBottom = '0'; 
     }
 }
+
+window.addEventListener('load', adjustFooterPosition);
+window.addEventListener('resize', adjustFooterPosition);
 
 // 在顯示或隱藏 start-page 時調用這個函數
 document.getElementById('start-quiz').addEventListener('click', () => {
     document.getElementById('start-page').style.display = 'none';
     document.getElementById('quiz-form').style.display = 'block';
-    adjustFooterPosition(); // 調整 footer 位置
+    document.getElementById('foot').style.display = 'none';
 });
 
 function goToStart() {
     document.getElementById('quiz-form').style.display = 'none';
     document.getElementById('start-page').style.display = 'block';
-    adjustFooterPosition(); // 調整 footer 位置
+    document.getElementById('foot').style.display = 'block';
 }
-
-// 確保在頁面加載時正確調整 footer 位置
-document.addEventListener('DOMContentLoaded', adjustFooterPosition);
 
 function nextPage() {
     if (isPageValid(currentPage)) {
@@ -211,12 +206,14 @@ function aboutUs() {
     const h2 = document.querySelector('#quiz-container h2');
     const content = document.querySelector('.content');
     const back = document.querySelector('.return');
+    const foot = document.getElementById('foot');
 
     document.getElementById('result').style.display = 'none';
     quizContainer.style.display = 'none';
     content.style.display = 'block';
     h2.style.display = 'none';
     back.style.display = 'block';
+    foot.style.display = 'block';
 
     window.scrollTo(0, 0);
 
@@ -226,6 +223,8 @@ function aboutUs() {
         content.style.display = 'none';
         h2.style.display = 'block';
         back.style.display = 'none';
+        foot.style.display = 'none';
+        window.scrollTo(0, 0);
     });
 }
 

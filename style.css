@@ -80,18 +80,19 @@ body {
     text-align: center;
 }
 
+
+
 #quiz-container {
     width: 80%;
-    top: 500px;
-    bottom: 300px;
     max-width: 600px;
-    margin: 100px auto 20px auto;
+    margin: 90px auto 20px auto;
     padding: 20px;
     background-color: #ffdd84cc;
     border: 5px white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 #quiz-container label,
 #quiz-container p {
@@ -124,7 +125,7 @@ body {
 }
 
 .return {
-    position: absolute;
+    position: fixed;
     top: 95px;
     left: 15px;
     background-color: transparent;
@@ -334,6 +335,7 @@ label {
     border-radius: 10px;
     margin: 20px;
     margin-top: 120px;
+    margin-bottom: 100px;
 }
 
 .section {
@@ -411,7 +413,7 @@ blockquote div {
 
 
 footer {
-    position: f;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -419,16 +421,17 @@ footer {
     color: #B7B7B7;
     height: 100px;
     display: flex;
-    align-items: center;
+    /* align-items: stretch; */
     font-size: 14px;
     padding: 15px;
     box-sizing: border-box;
     justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
 }
+
 .social-icons {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     margin-bottom: 10px;
 }
