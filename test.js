@@ -185,7 +185,7 @@ function submitQuiz(event) {
             <div class="button-container">
                 <label class="result-button" onclick="restartQuiz()">再測一次</label>
                 <label class="result-button" onclick="shareResult('${imageUrl}', '${result}')">分享結果</label>
-                <label class="about-button" onclick="aboutUs()"><strong>關於我們</strong></label>
+                <label class="about-button" onclick="aboutUs()">關於我們</label>
             </div>`;
 
         // 隱藏所有頁面，顯示結果

@@ -3,6 +3,11 @@
     margin:0;
 }
 
+@font-face {
+    font-family: 'JF Open Huninn'; /* 給字體起個名字 */
+    src: url('jf-openhuninn-2.0.ttf') format('truetype'); /* 指定字體文件路徑 */
+}
+
 main {
     flex: 1;
 }
@@ -19,7 +24,7 @@ h1 {
 }
 h2 {
     color: black;
-    font-size: 2em;
+    font-size: 1.7em;
     position: relative;
     text-align: center;
 }
@@ -53,7 +58,7 @@ header li:hover {
 }
 
 body {
-    font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Arial', sans-serif;
+    font-family: 'JF Open Huninn', sans-serif; /* 使用定義的字體 */
 }
 
 /* 設置背景圖像的容器 */
@@ -186,10 +191,6 @@ body {
     margin-bottom: 5px;
 }
 
-.question p {
-    font-weight: bold;
-}
-
 .hidden-radio {
     border: 0;
     clip: rect(0, 0, 0, 0);
@@ -283,9 +284,7 @@ body {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
-    font-family: 'Source Han Sans', sans-serif; /* 設置字體 */
     font-size: 16px;
-    font-weight: bold;
 }
 
 .about-button {
@@ -296,9 +295,7 @@ body {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
-    font-family: 'Source Han Sans', sans-serif; /* 設置字體 */
     font-size: 16px;
-    font-weight: bold;
 }
 
 .option-input {
@@ -311,16 +308,13 @@ body {
     cursor: not-allowed;
 }
 
-/*如果使用者的裝置沒有安裝某個特定字體，瀏覽器會依序嘗試使用其他字體，直到找到可用的字體*/
 label {
     display: block;
     margin-bottom: 10px;
-    font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Arial', sans-serif;
 }
 
 #result {
     margin-top: 20px;
-    font-weight: bold;
 }
 
 .menu {
@@ -417,7 +411,7 @@ blockquote div {
 
 
 footer {
-    position: fixed;
+    position: f;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -488,10 +482,6 @@ footer {
         margin: 0 auto; 
     }
 
-    #quiz-container p {
-        padding: 5px;
-        color: white;
-    }
     .option-button {
         display: inline-block;
         width: 95%;
@@ -502,8 +492,6 @@ footer {
         text-align: center;
         cursor: pointer;
         transition: background-color 0.3s, border-color 0.3s;
-        font-family: 'Source Han Sans', sans-serif; /* 設置字體 */
         font-size: 14px;
-        font-weight: bold;
     }
 }
