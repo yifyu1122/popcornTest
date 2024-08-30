@@ -8,483 +8,188 @@
     src: url('jf-openhuninn-2.0.ttf') format('truetype'); /* 指定字體文件路徑 */
 }
 
-main {
-    flex: 1;
-}
-
-h1 {
-    color:rgb(0, 0, 0);
-    position: absolute;
-    left: 100px;
-    top: 0;
-    line-height: 80px;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 280px;
-}
-h2 {
-    color: black;
-    font-size: 1.7em;
-    position: relative;
-    text-align: center;
-}
-
-header {
-    background-color:#fff0c6cc;
-    height:80px;
-    width:100%;
-    position:fixed; 
-    top: 0;   
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    z-index: 1000;
-}
-
-header ul {
-    position:absolute;
-    right: 80px;
-    top:0;
-    line-height:80px;
-}
-header li {
-    display:inline;
-    margin-right:4vw;    
-    color:white;
-    text-decoration: none;
-}
-header li:hover {
-    text-decoration: underline;
-}
-
-body {
-    font-family: 'JF Open Huninn', sans-serif; /* 使用定義的字體 */
-}
-
-/* 設置背景圖像的容器 */
-.background-image {
-    position: fixed; /* 固定背景 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('image/background.jpg'); /* 更換為你的背景圖像 */
-    background-size: cover; /* 使背景圖像覆蓋整個容器 */
-    background-position: center; /* 背景圖像居中 */
-    background-repeat: no-repeat; /* 防止背景圖像重複 */
-    /* filter: blur(8px); 設置模糊效果，根據需要調整數值 */
-    z-index: -1; /* 確保背景圖像位於內容後面 */
-}
-
-#start-page {
-    text-align: center;
-}
-
-
-
-#quiz-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 90px auto 20px auto;
-    padding: 20px;
-    background-color: #ffdd84cc;
-    border: 5px white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-#quiz-container label,
-#quiz-container p {
-    padding: 15px;
-    color: white;
-}
-
-/* 音樂播放器樣式 */
-#audio-player {
-    display: none;
-}
-
-/* 靜音按鈕樣式 */
-.mute-button {
-    position: absolute;
-    top: 15px;
-    right: 0px;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 1000; /* 確保圖標在最上層 */
-}
-
-.return {
-    position: fixed;
-    top: 95px;
-    left: 15px;
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
-    width: 30px;
-}
-
-.logo {
-    padding: 10px; 
-    width: 60px;
-    margin-left: 10px;
-}
-
-.pic {
-    position: relative;
-    width: 100%; 
-    max-width: 300px;
-    display: block; 
-    margin: 0 auto; 
-    padding: 10px;
-}
-
-/* 開始測驗按鈕樣式 */
-.start-button {
-    background-color: #edc690; /* 按鈕背景顏色 */
-    border: 2px solid #cccccca1; /* 按鈕邊框顏色 */
-    border-radius: 50px; /* 圓形按鈕 */
-    padding: 15px 30px;
-    margin: 10px auto; /* 自動邊距以實現水平置中 */
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    width: 60%;
-    /* max-width: 300px; 限制按鈕寬度 */
-    color: #ffffff; /* 按鈕文字顏色 */
-    font-size: 20px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease; /* 平滑過渡效果 */
-}
-
-.start-button:hover {
-    background-color: #edc690; /* 懸停背景顏色 */
-    color: #fff; /* 懸停文字顏色 */
-}
-
-.white-icon {
-    font-size: 24px;
-}
-
-.quiz-page {
-    display: none;
-}
-
-#quiz-form {
-    display: flex;     
-    justify-content: center; 
-    align-items: center;     
-    flex-direction: column; 
-    text-align: center;     
-}
-
-.question {
-    margin-bottom: 5px;
-}
-
-.hidden-radio {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-}
-
-.navigation-label {
-    border: 2px solid #fee195; /* 按鈕邊框顏色 */
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #fff0c6; /* 按鈕背景顏色 */
-    color: rgb(0, 0, 0) !important; /* 按鈕文字顏色 */
-    font-size: 14px;
-    line-height: 0.8;
-    text-align: center;
-    padding: 0;
-    margin: 0 5px; 
-    font-weight: bold;
-}
-
-.navigation-label:hover {
-    background-color: #dccb9d; /* 懸停背景顏色 */
-    border-color: #c29c33;
-}
-
-.navigation-buttons {
-    display:  flex;
-    align-items: center; 
-    text-align: center;
-    justify-content: space-between; 
-}
-
-
-.page-indicator {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 0.8em;
-    color: #666;
-}
-
-.save-instruction {
-    text-align: center;
-    font-size: 0.8em;
-    color: #666;
-    margin-top: 10px;
-}
-
-.button-container {
-    text-align: center; /* 將內部內容置中 */
-    margin-top: 20px; /* 顯示容器與上方內容的間距 */
-}
-
-.result-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 50px;
-    background-color: #edc690; /* 按鈕背景顏色 */
-    border: 2px solid #ccc;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.result-button:hover {
-    background-color: #e28e2d; /* 懸停背景顏色 */
-}
-
-
-.option-container {
-    display: flex;
-    box-sizing: border-box; 
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.option-button {
-    display: inline-block;
-    width: 95%;
-    padding: 5px 10px;
-    border-radius: 50px;
-    background-color: #edc690; /* 按鈕背景顏色 */
-    border: 2px solid #ccc;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-    font-size: 16px;
-}
-
-.about-button {
-    padding: 5px 10px;
-    border-radius: 50px;
-    background-color: #edc690; /* 按鈕背景顏色 */
-    border: 2px solid #ccc;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-    font-size: 16px;
-}
-
-.option-input {
-    display: none;
-}
-
-.option-input:checked + .option-button {
-    background-color: #ccc;
-    border-color: #aaa;
-    cursor: not-allowed;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-#result {
-    margin-top: 20px;
-}
-
-.menu {
-    display: none;
-}
-
-
-
-
-
-
-
-.content {
-    display: none;
-    padding: 20px;
-    color: #fff;
-    border-radius: 10px;
-    margin: 20px;
-    margin-top: 120px;
-    margin-bottom: 100px;
-}
-
-.section {
-    margin-bottom: 20px;
-}
-
-
-.about-us {
-    padding: 20px;
-    background-color: #ffdd84cc;
-    color: #333;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-.about-us h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #444;
-}
-
-.about-us h3 {
-    font-size: 24px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    color: #555;
-}
-
-
-.about-us p {
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-.about-us ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.about-us li {
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-blockquote {
-    font-style: italic;
-    margin: 12px 0;
-    padding: 10px 20px;
-    background-color: #fffdfd5b;
-    border-left: 5px solid #a4c1dffa;
-    color: #7190d0;
-    border-radius: 10px;
-    font-size: small;
-    font-weight: bold;
-    position: relative; /* 使 footer 可以在 blockquote 中相對定位 */
-}
-
-blockquote p {
-    margin: 0;
-    font-size: 14px !important;
-}
-
-blockquote div {
-    text-align: right;
-    font-style: normal;
-    font-size: smaller;
-    font-weight: normal;
-}
-
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff0c6;
-    color: #B7B7B7;
-    height: 100px;
-    display: flex;
-    /* align-items: stretch; */
-    font-size: 14px;
-    padding: 15px;
-    box-sizing: border-box;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.social-icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.icon {
-    width: 30px;
-    margin: 0 10px; 
-}
-
-
-
-
-/* Phone */
-@media screen and (max-width: 768px) {
-    .menu {
-        display: none;
-        background-color: transparent;
-        color: white;
-        font-size: 35px;
-        position: absolute;
-        top: 15px;
-        left: 20px;
-        border: none;
-        cursor:pointer;
-    }
-
-
-
-    .logo {
-        padding: 10px; 
-        width: 60px;
-        margin-left: 0;
+/* BODY */     
+    body {
+        font-family: 'JF Open Huninn', sans-serif; /* 使用定義的字體 */
     }
 
     h1 {
         color:rgb(0, 0, 0);
-        position:absolute;
-        left:70px;
-        top:0;
+        position: absolute;
+        left: 100px;
+        top: 0;
         line-height: 80px;
         background-repeat: no-repeat;
         background-position: center;
-        width:280px;
+        width: 280px;
+    }
+    h2 {
+        color: black;
+        font-size: 1.7em;
+        position: relative;
+        text-align: center;
+    }
+
+/* HEADER */ 
+    header {
+        background-color:#fff0c6cc;
+        height:80px;
+        width:100%;
+        position:fixed; 
+        top: 0;   
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+
+    header ul {
+        position:absolute;
+        right: 80px;
+        top:0;
+        line-height:80px;
+    }
+    header li {
+        display:inline;
+        margin-right:4vw;    
+        color:white;
+        text-decoration: none;
+    }
+    header li:hover {
+        text-decoration: underline;
+    }
+
+    .logo {
+        padding: 10px; 
+        width: 60px;
+        margin-left: 10px;
+    }
+
+    /* 靜音按鈕樣式 */
+    .mute-button {
+        position: absolute;
+        top: 15px;
+        right: 0px;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; /* 確保圖標在最上層 */
+    }
+
+    .white-icon {
+        font-size: 24px;
+    }
+
+
+/* MAIN */
+    main {
+        flex: 1;
+    }
+
+    /* 設置背景圖像的容器 */
+    .background-image {
+        position: fixed; /* 固定背景 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('image/background.jpg'); /* 更換為你的背景圖像 */
+        background-size: cover; /* 使背景圖像覆蓋整個容器 */
+        background-position: center; /* 背景圖像居中 */
+        background-repeat: no-repeat; /* 防止背景圖像重複 */
+        /* filter: blur(8px); 設置模糊效果，根據需要調整數值 */
+        z-index: -1; /* 確保背景圖像位於內容後面 */
+    }  
+
+    .section {
+        margin-bottom: 20px;
+    }
+
+    #quiz-container {
+        width: 80%;
+        max-width: 600px;
+        margin: 90px auto 20px auto;
+        padding: 20px;
+        background-color: #ffdd84cc;
+        border: 5px white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #quiz-container label,
+    #quiz-container p {
+        padding: 15px;
+        color: white;
+    }
+
+    #start-page {
+        text-align: center;
     }
 
     .pic {
         position: relative;
         width: 100%; 
-        max-width: 200px;
+        max-width: 300px;
         display: block; 
         margin: 0 auto; 
+        padding: 10px;
     }
 
+    /* 開始測驗按鈕樣式 */
+    .start-button {
+        background-color: #edc690; /* 按鈕背景顏色 */
+        border: 2px solid #cccccca1; /* 按鈕邊框顏色 */
+        border-radius: 50px; /* 圓形按鈕 */
+        padding: 15px 30px;
+        margin: 10px auto; /* 自動邊距以實現水平置中 */
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        width: 60%;
+        /* max-width: 300px; 限制按鈕寬度 */
+        color: #ffffff; /* 按鈕文字顏色 */
+        font-size: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease; /* 平滑過渡效果 */
+    }
+    .start-button:hover {
+        background-color: #edc690; /* 懸停背景顏色 */
+        color: #fff; /* 懸停文字顏色 */
+    }
+
+    #quiz-form {
+        display: flex;     
+        justify-content: center; 
+        align-items: center;     
+        flex-direction: column; 
+        text-align: center;     
+    }
+    .quiz-page {
+        display: none;
+    }
+
+    .question {
+        margin-bottom: 5px;
+    }
+
+    .option-container {
+        display: flex;
+        box-sizing: border-box; 
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
     .option-button {
         display: inline-block;
         width: 95%;
@@ -495,6 +200,262 @@ footer {
         text-align: center;
         cursor: pointer;
         transition: background-color 0.3s, border-color 0.3s;
-        font-size: 14px;
+        font-size: 16px;
     }
-}
+    .option-input {
+        display: none;
+    }
+    .option-input:checked + .option-button {
+        background-color: #ccc;
+        border-color: #aaa;
+        cursor: not-allowed;
+    }
+
+    
+    .navigation-buttons {
+        display:  flex;
+        align-items: center; 
+        text-align: center;
+        justify-content: space-between; 
+    }
+    .hidden-radio {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+    }
+    .navigation-label {
+        border: 2px solid #fee195; /* 按鈕邊框顏色 */
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #fff0c6; /* 按鈕背景顏色 */
+        color: rgb(0, 0, 0) !important; /* 按鈕文字顏色 */
+        font-size: 14px;
+        line-height: 0.8;
+        text-align: center;
+        padding: 0;
+        margin: 0 5px; 
+        font-weight: bold;
+    }
+    .navigation-label:hover {
+        background-color: #dccb9d; /* 懸停背景顏色 */
+        border-color: #c29c33;
+    }
+    .page-indicator {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    .button-container {
+        text-align: center; /* 將內部內容置中 */
+        margin-top: 20px; /* 顯示容器與上方內容的間距 */
+    }
+    .result-button {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #edc690; /* 按鈕背景顏色 */
+        border: 2px solid #ccc;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+    .result-button:hover {
+        background-color: #e28e2d; /* 懸停背景顏色 */
+    }
+    .about-button {
+        padding: 5px 10px;
+        border-radius: 50px;
+        background-color: #edc690; /* 按鈕背景顏色 */
+        border: 2px solid #ccc;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+        font-size: 16px;
+    }
+
+    #result {
+        margin-top: 20px;
+    }
+
+
+/* ABOUT US */
+    .content {
+        display: none;
+        padding: 20px;
+        color: #fff;
+        border-radius: 10px;
+        margin: 20px;
+        margin-top: 120px;
+        margin-bottom: 100px;
+    }
+
+    .return {
+        position: fixed;
+        top: 95px;
+        left: 15px;
+        background-color: transparent;
+        color: #fff;
+        cursor: pointer;
+        width: 30px;
+    }
+
+    .about-us {
+        padding: 20px;
+        background-color: #ffdd84cc;
+        color: #333;
+        line-height: 1.6;
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-us h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #444;
+    }
+
+    .about-us h3 {
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #555;
+    }
+
+    .about-us p {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .about-us ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .about-us li {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    blockquote {
+        font-style: italic;
+        margin: 12px 0;
+        padding: 10px 20px;
+        background-color: #fffdfd5b;
+        border-left: 5px solid #a4c1dffa;
+        color: #7190d0;
+        border-radius: 10px;
+        font-size: small;
+        font-weight: bold;
+        position: relative; /* 使 footer 可以在 blockquote 中相對定位 */
+    }
+
+    blockquote p {
+        margin: 0;
+        font-size: 14px !important;
+    }
+
+    blockquote div {
+        text-align: right;
+        font-style: normal;
+        font-size: smaller;
+        font-weight: normal;
+    }
+
+
+/* FOOTER */
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff0c6;
+        color: #B7B7B7;
+        height: 100px;
+        display: flex;
+        /* align-items: stretch; */
+        font-size: 14px;
+        padding: 15px;
+        box-sizing: border-box;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .icon {
+        width: 30px;
+        margin: 0 10px; 
+    }
+
+
+/* PHONE */
+    @media screen and (max-width: 768px) {
+        .menu {
+            display: none;
+            background-color: transparent;
+            color: white;
+            font-size: 35px;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            border: none;
+            cursor:pointer;
+        }
+
+
+
+        .logo {
+            padding: 10px; 
+            width: 60px;
+            margin-left: 0;
+        }
+
+        h1 {
+            color:rgb(0, 0, 0);
+            position:absolute;
+            left:70px;
+            top:0;
+            line-height: 80px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width:280px;
+        }
+
+        .pic {
+            position: relative;
+            width: 100%; 
+            max-width: 200px;
+            display: block; 
+            margin: 0 auto; 
+        }
+
+        .option-button {
+            display: inline-block;
+            width: 95%;
+            padding: 5px 10px;
+            border-radius: 50px;
+            background-color: #edc690; /* 按鈕背景顏色 */
+            border: 2px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            font-size: 14px;
+        }
+    }

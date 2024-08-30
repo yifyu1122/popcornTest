@@ -13,10 +13,16 @@ window.addEventListener('click', () => {
     });
 });
 
-window.addEventListener('beforeunload', function () {
-    const audioPlayer = document.getElementById('audio-player');
-    audioPlayer.pause();  // 暫停音樂
-    audioPlayer.currentTime = 0;  // 重置播放時間
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        audioPlayer.pause();
+    } else {
+        audioPlayer.play();
+    }
+});
+
+window.addEventListener('pagehide', function() {
+    audioPlayer.pause();
 });
 
 // 靜音按鈕功能
@@ -136,43 +142,38 @@ function submitQuiz(event) {
             if (result.includes('dog') && result.includes('rabbit')) {
                 result = answers[2]?.value === 'rabbit' ? '兔兔' : '狗狗';
             } else if (result.includes('dog') && result.includes('cat')) {
-                result = answers[0]?.value === 'dog' ? '狗狗' : '貓貓';
+                result = answers[0]?.value === 'dog' ? '狗狗' : '米米';
             } else if (result.includes('dog') && result.includes('salamander')) {
                 result = answers[0]?.value === 'dog' ? '狗狗' : '蠑螈';
             } else if (result.includes('cat') && result.includes('rabbit')) {
-                result = answers[5]?.value === 'cat' ? '貓貓' : '兔兔';
+                result = answers[5]?.value === 'cat' ? '米米' : '兔兔';
             } else if (result.includes('cat') && result.includes('salamander')) {
-                result = answers[3]?.value === 'cat' ? '貓貓' : '蠑螈';
+                result = answers[3]?.value === 'cat' ? '米米' : '蠑螈';
             } else if (result.includes('rabbit') && result.includes('salamander')) {
                 result = answers[1]?.value === 'rabbit' ? '兔兔' : '蠑螈';
             }
         } else {
             result = result[0] === 'dog' ? '狗狗' :
                     result[0] === 'rabbit' ? '兔兔' :
-                    result[0] === 'cat' ? '貓貓' : '蠑螈';
+                    result[0] === 'cat' ? '米米' : '蠑螈';
         }
 
         // 定義結果文字
-        let resultText = "你的結果是：" + result;
         let imageUrl = '';
 
         // 添加額外描述
         if (result === '兔兔') {
-            resultText += '<br>兔子：<br>老好人aka宿舍的氣氛調節器，適應團體生活，能很快融入集體。經常主動照顧同寢的夥伴們，溫柔的關心每一個人。有時會在你意想不到時後投餵許多小零食哦～';
             imageUrl = 'image/rabbit.png';
         } else if (result === '蠑螈') {
-            resultText += '<br>蠑螈：<br>平時很安靜，經常沉浸在自己的小世界，靜靜地享受自己的時光。個性隨和好相處，號稱“人間活菩薩”，但偶爾會做出無厘頭的舉動（？）總是默默的觀察大家，用自己的方式關心夥伴。';
             imageUrl = 'image/salamander.png';
         } else if (result === '狗狗') {
-            resultText += '<br>狗狗：<br>個性熱情開朗，總是坦率的表達自己的想法。喜歡和朋友們一起玩樂，有他在身邊永遠充滿驚喜與快樂。雖然有時不太擅長讀空氣，但他的真誠與熱情總是感染著身邊的人，可以說是行走的發電機～';
             imageUrl = 'image/dog.png';
-        } else if (result === '貓貓') {
-            resultText += '<br>貓貓：<br>感覺是話很少的人，喜歡獨來獨往（或只跟特定對象一起行動），但意外地知道很多宿舍秘辛。在外人眼中，對周遭事物似乎都有些許冷淡，散發著一股神秘的氣息，喜歡一個人獨處的時光，也不排斥跟其他人打交道，雖然平常不太起眼，但意外的知道很多宿舍秘辛，面冷心善的他也默默用自己的方式關心著大家~'
+        } else if (result === '米米') {
             imageUrl = 'image/cat.png';
         }
 
         if (imageUrl) {
-            resultText = `<img src="${imageUrl}" alt="${result}" style="max-width: 100%;"><br>` + resultText;
+            resultText = `<img src="${imageUrl}" alt="${result}" style="max-width: 100%;"><br>`;
         }
         resultText += '<br><small style="color: black; display: block; text-align: center; padding: 5px">長按上方結果圖就能儲存囉！</small>';
 
@@ -233,7 +234,7 @@ function shareResult(imageUrl, result) {
     if (navigator.share) {
         navigator.share({
             title: '測驗結果',
-            text: `我的結果是：${result}`,
+            text: `我的室友類型是：${result}`,
             url: imageUrl
         }).then(() => {
             console.log('分享成功');
@@ -241,7 +242,7 @@ function shareResult(imageUrl, result) {
             console.error('分享失敗', err);
         });
     } else {
-        alert('分享功能不被支持');
+        alert('您的瀏覽器不支持分享功能');
     }
 }
 
@@ -250,4 +251,3 @@ document.addEventListener('DOMContentLoaded', () => {
     showPage(currentPage);
     document.getElementById('submit-button').addEventListener('click', submitQuiz);
 });
-

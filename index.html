@@ -11,7 +11,6 @@
 
 <body>
     <header>
-        <button class="menu">&#9776;</button>
         <img class="logo" src="image/logo.jpg" alt="測驗圖片">
         <h1>爆米花心理小測驗</h1> 
          <!-- 靜音按鈕 -->
@@ -21,15 +20,13 @@
     </header>   
     <main>      
         <div class="background-image"></div>
-        <section>
+        <section>    
         <!-- 音樂播放器 -->
-        <audio id="audio-player" loop>
+        <audio id="audio-player" style="display: none;" loop>
             <source src="What Kind of Dormmate Are You.mp3" type="audio/mpeg">
             您的瀏覽器不支援音樂哦
         </audio>
 
-        <img src="image/return.png" alt="Return" class="return"  style="display: none;">
-    
         <div id="quiz-container">
             <div id="start-page">
                 <h2>你是什麼樣的室友?</h2>
@@ -230,7 +227,9 @@
             <div id="result" class="quiz-form" style="display: none;"></div>
         </div>
         </section>
+
         <div class="content" style="display: none;">
+            <img src="image/return.png" alt="Return" class="return">
             <div class="about-us">
                 <section class="section intro">
                     <h2>關於我們</h2>
